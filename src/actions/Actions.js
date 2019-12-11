@@ -10,9 +10,17 @@ export const getMenuDetailsAction = async dispatch => {
 };
 
 export const addOrderAction = async (dispatch,order) => {
-    const response = await pizza.post("/order", order);
-    dispatch({ type: ActionTypes.ADD_ORDER, payload: response.data });
+    await pizza.post("/order", order);
+    // dispatch({ type: ActionTypes.ADD_ORDER, payload: response.data });
 };
+
+export const getOrdersDetailsAction = async dispatch => {
+    debugger;
+    const response = await pizza.get("/order");
+    debugger;
+    dispatch({ type: ActionTypes.GET_ORDERS, payload: response.data });
+};
+
 
 //=====================================================================================
 
