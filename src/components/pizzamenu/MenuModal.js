@@ -34,7 +34,6 @@ class DetailsModal extends React.Component
         data={data}
         valueField={valueField}
         textField={textField}
-        onChange={input.onChange}
      />
 
    
