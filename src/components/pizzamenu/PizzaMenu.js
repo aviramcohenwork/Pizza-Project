@@ -1,6 +1,5 @@
 import React from 'react';
 import {getMenuDetailsAction,insertItemToCartAction,deliveryModalAction} from '../../actions/Actions'
-import {gettingOrders} from '../../components/pizzaorders/PizzaOrders'
 import { connect } from 'react-redux';
 import {Table,Button,Image} from 'semantic-ui-react';
 import drinkChoose from '../../pictures/aa.png';
@@ -15,6 +14,11 @@ class PizzaMenuComponent extends React.Component
         this.props.getMenuDetails();
     }
 
+    // /** 
+    //  * @param item this object id int
+    //  * @returns alert with message
+    //  * 
+    //  */
     addDrinkToCart = (item) =>
     {
          this.props.insertPizzaItem(item);
@@ -32,8 +36,6 @@ class PizzaMenuComponent extends React.Component
         this.props.showDetailsModal((true));
     }
   
-
-
     showMenu = () =>
     (
         <div>
@@ -45,7 +47,7 @@ class PizzaMenuComponent extends React.Component
                     <Table.Row>  
                         <Table.HeaderCell>Drink Name</Table.HeaderCell>
                         <Table.HeaderCell>Drink Price</Table.HeaderCell>
-                        <Table.HeaderCell style={{ width: "17%"}}>Quantity</Table.HeaderCell>
+                        <Table.HeaderCell style={{ width: "17%"}}>Press To Add</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -56,7 +58,6 @@ class PizzaMenuComponent extends React.Component
                         <Table.Cell>{item.price}</Table.Cell> 
                         <Table.Cell><Button onClick={()=>this.addDrinkToCart(item)}>Add To Cart</Button></Table.Cell> 
                     </Table.Row>
-                
                     )}
                 </Table.Body>
             </Table>
@@ -67,7 +68,7 @@ class PizzaMenuComponent extends React.Component
                     <Table.Row>  
                         <Table.HeaderCell>Pizza Style</Table.HeaderCell>
                         <Table.HeaderCell>Pizza Price</Table.HeaderCell>
-                        <Table.HeaderCell style={{ width: "17%"}}>Quantity</Table.HeaderCell>
+                        <Table.HeaderCell style={{ width: "17%"}}>Press To Add</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -108,7 +109,6 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
     return{
         getMenuDetails : () => getMenuDetailsAction(dispatch),
-        sentItem : (item) => gettingOrders(item),
         showDetailsModal : (modalStatus) =>  deliveryModalAction(dispatch,modalStatus),
         insertPizzaItem: (item) => insertItemToCartAction(dispatch,item),
         insertDrinkItem: (item) => insertItemToCartAction(dispatch,item),

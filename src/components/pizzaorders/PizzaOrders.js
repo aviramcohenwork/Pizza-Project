@@ -1,22 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {getOrdersDetailsAction} from '../../actions/Actions'
 
-export default class PizzaOrdersComponent extends React.Component
-{
-        render()
-        {
-            return(
-                <div>
-                    hello form orders
-                </div>
-            )
-
-        }
+class PizzaOrdersComponent extends React.Component
+{ 
+    
+    render()
+    {
+        return (
+            <div>
+                {this.props.getOrdersDetailsFormDB()}
+                sad
+            </div>
+        )
+    }
 
 }
 
-export const gettingOrders= (item) =>
-{
-    debugger;
-    console.log(item);
-}
 
+const mapDispatchToProps = (dispatch) => {
+    return{
+        getOrdersDetailsFormDB: () => getOrdersDetailsAction(dispatch),
+    } 
+};
+
+
+
+export default connect(null, mapDispatchToProps)(PizzaOrdersComponent);
