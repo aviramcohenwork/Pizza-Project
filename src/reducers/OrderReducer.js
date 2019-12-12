@@ -5,7 +5,7 @@ export default (state = {}, action) => {
             return {...state,...action.payload};
         case 'GET_ORDERS':  
         debugger;
-            return { ...state, ...payload };
+            return { ...state, orderList:[...payload] };
         default:
             return state;
     }
