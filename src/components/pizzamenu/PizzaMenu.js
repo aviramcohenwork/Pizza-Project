@@ -6,8 +6,6 @@ import drinkChoose from '../../pictures/aa.png';
 import pizzaChoose from '../../pictures/bb.png';
 import {reduxForm } from 'redux-form';
 import DetailsModal from './MenuModal';
-import { Link } from 'react-router-dom';
-
 
 class PizzaMenuComponent extends React.Component
 {
@@ -42,7 +40,7 @@ class PizzaMenuComponent extends React.Component
     (
         <div>
             <Image style={{width: "70%",height:"350px", marginLeft: "15%" }} src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
-            <Link to="/" ><Button style={{width: "70%", height:"60px",marginLeft: "15%",marginTop:"5px"}} negative>Back To Main</Button></Link>
+            <Button style={{width: "70%", height:"40px",marginLeft: "15%",marginTop:"15px"}} negative onClick={event =>  window.location.href='/'} >Back To Main</Button>
             <Image style={{width: "200",height:"50px", marginLeft: "15%", marginTop: "2%", display:"inline"  }} src={drinkChoose}></Image>
             <Table style={{width: "70%", marginLeft: "15%"}} >
                 <Table.Header >
