@@ -91,7 +91,7 @@ class DetailsModal extends React.Component
                                 name="city"
                                 component={this.renderDropdownList}
                                 data={this.props.city}
-                                valueField="myvalue"
+                                valueField="value"
                                 textField="text"
                                 placeholder='Choose City'
                                 dropUp={true}

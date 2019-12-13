@@ -6,6 +6,7 @@ import {HomePagePictureDataOne,HomePagePictureDataTwo} from '../../const/ConstLi
 import { Link } from 'react-router-dom';
 import '../../css/HomePage.css';
 
+
 class PizzaHomePageComponent extends React.Component
 {
     render()
