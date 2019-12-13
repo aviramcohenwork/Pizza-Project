@@ -6,6 +6,8 @@ import drinkChoose from '../../pictures/aa.png';
 import pizzaChoose from '../../pictures/bb.png';
 import {reduxForm } from 'redux-form';
 import DetailsModal from './MenuModal';
+import { Link } from 'react-router-dom';
+import '../../css/PizzaMenu.css'
 
 class PizzaMenuComponent extends React.Component
 {
@@ -39,15 +41,14 @@ class PizzaMenuComponent extends React.Component
     showMenu = () =>
     (
         <div>
-            <Image style={{width: "70%",height:"350px", marginLeft: "15%" }} src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
-            <Button style={{width: "70%", height:"40px",marginLeft: "15%",marginTop:"15px"}} negative onClick={event =>  window.location.href='/'} >Back To Main</Button>
-            <Image style={{width: "200",height:"50px", marginLeft: "15%", marginTop: "2%", display:"inline"  }} src={drinkChoose}></Image>
-            <Table style={{width: "70%", marginLeft: "15%"}} >
+            <Image className="topBottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
+            <Image className="chooseDrinkPizzaButtons" src={drinkChoose}></Image>
+            <Table id="tableDrinkPizaaSize" >
                 <Table.Header >
                     <Table.Row>  
                         <Table.HeaderCell>Drink Name</Table.HeaderCell>
                         <Table.HeaderCell>Drink Price</Table.HeaderCell>
-                        <Table.HeaderCell style={{ width: "17%"}}>Press To Add</Table.HeaderCell>
+                        <Table.HeaderCell id="tableButtonsSize">Press To Add</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -62,13 +63,13 @@ class PizzaMenuComponent extends React.Component
                 </Table.Body>
             </Table>
 
-            <Image style={{width: "200",height:"50px", marginLeft: "15%", marginTop: "2%" }} src={pizzaChoose} ></Image>
-            <Table style={{width: "70%", marginLeft: "15%"}} >
+            <Image className="chooseDrinkPizzaButtons" src={pizzaChoose} ></Image>
+            <Table id="tableDrinkPizaaSize" >
                 <Table.Header >
                     <Table.Row>  
                         <Table.HeaderCell>Pizza Style</Table.HeaderCell>
                         <Table.HeaderCell>Pizza Price</Table.HeaderCell>
-                        <Table.HeaderCell style={{ width: "17%"}}>Press To Add</Table.HeaderCell>
+                        <Table.HeaderCell id="tableButtonsSize">Press To Add</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -83,9 +84,9 @@ class PizzaMenuComponent extends React.Component
                 </Table.Body>
             </Table>
             <div>
-            <Button style={{width: "70%", height:"60px",marginLeft: "15%",marginBottom:"1%"}} negative onClick={this.openDeliveryDetailsModal}>Order Now</Button>
+            <Button id="orderButton" negative onClick={this.openDeliveryDetailsModal}>Order Now</Button>
             </div>
-            <Image style={{width: "70%",height:"350px", marginLeft: "15%"}} src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
+            <Image className="topBottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
             <DetailsModal/>
         </div>
     )

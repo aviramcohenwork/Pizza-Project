@@ -5,7 +5,7 @@ import PizzaMenu from './components/pizzamenu/PizzaMenu';
 import PizzaContectUs from './components/pizzacontectus/PizzaContectUs';
 import PizzaOrders from './components/pizzaorders/PizzaOrders';
 import PageNotFound from './components/pizzapagenotfound/PizzaPageNotFound';
-
+import PizzaNavBar from './components/pizzahomepage/PizzaNavbar'
 class App extends React.Component
 {
   render()
@@ -13,6 +13,7 @@ class App extends React.Component
     return(
       <div>
         <BrowserRouter>
+        <PizzaNavBar/>
           <Switch>
             <Route exact path="/" component={PizzaHomePage}/>
             <Route exact path="/Menu" component={PizzaMenu}/>

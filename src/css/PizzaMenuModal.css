@@ -1,0 +1,86 @@
+#modalSize{
+   
+    height: 600px;
+    margin-left:20%;
+    margin-top:5%;
+}
+
+#exitButton{
+    margin-top:-50px;
+    margin-left:740px;
+    width:120px;
+    background: black;
+    border: #dc3545;
+}
+
+#modalContent{
+    padding: 3%;
+    content: 10%;
+    background:#dc3545 ;
+}
+
+#modalHeader{
+    background:#dc3545 ;
+    font-weight: bold;
+}
+
+#modalHeader #deliveryMessage{
+    background:#dc3545 ;
+    font-size: 25px;
+}
+
+#modalContent .fieldsFullName{
+
+    margin-top:2%;
+    margin-right:2%;
+    width:200px;
+    display: inline-block;
+}
+
+#modalContent .fieldsStreet{
+
+    margin-top:2%;
+    width:200px;
+    display: inline-block;
+}
+
+#modalContent .fieldsHomeNumber{
+
+    margin-top:2%;
+    margin-left:2%;
+    margin-right:2%;
+    width:200px;
+    display: inline-block;
+}
+
+
+#modalContent .fieldsPhoneNumber{
+
+    margin-top:1%;
+    margin-right:2%;
+    width:200px;
+    display: inline-block;
+}
+
+#modalContent .fieldsCity{
+    margin-top:1%;
+    margin-left:-2px;
+    width:200px;
+    display: inline-block;
+    vertical-align: -10px;
+}
+
+#modalContent #orderButton{
+    margin-bottom:2%;
+    margin-left:2%;
+    width:200px;
+    height: 35px;
+    background: black;
+    border: #dc3545;
+    display: inline-block;
+    vertical-align: -12px;
+}
+
+
+
+

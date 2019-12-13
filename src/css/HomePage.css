@@ -1,0 +1,23 @@
+
+.row{
+    background-color: #dc3545;
+}
+
+.row .buttoninlink .linkbuttonstag .buttoninlink {
+    margin-top: 25px;
+    width: 250px; 
+    margin-left: 50px;
+    background-color: black;
+    border-color: black;
+    border-radius: 25px;
+}
+
+
+.row .iconlink .linkicontag .iconbuttons {
+    margin-top: 25px;
+    width: 120px; 
+    margin-left: 60px;
+    background-color: black;
+    border-color: black;
+    border-radius: 25px;
+}

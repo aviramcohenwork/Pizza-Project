@@ -1,0 +1,35 @@
+.topBottomImage{
+    width: 70%;
+    height: 350px;
+    margin-left: 15%;
+}
+
+#backToMainButton{
+    width: 70%;
+    height:60px;
+    margin-left: 15%;
+    margin-top:5px;
+}
+
+.chooseDrinkPizzaButtons{
+    width: 200;
+    height:50px;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+#tableDrinkPizaaSize{
+    width: 70%;
+    margin-left: 15%;
+}
+
+#tableButtonsSize{
+    width: 17%;
+}
+
+#orderButton{
+    width: 70%;
+    height:60px;
+    margin-left: 15%;
+    margin-bottom:1%;
+}
