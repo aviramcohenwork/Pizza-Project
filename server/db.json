@@ -1,0 +1,496 @@
+{
+  "menu": {
+    "drinks": [
+      {
+        "name": "Cola",
+        "price": 8,
+        "id": 1
+      },
+      {
+        "name": "Nestea",
+        "price": 13,
+        "id": 2
+      },
+      {
+        "name": "Sprite",
+        "price": 16,
+        "id": 3
+      },
+      {
+        "name": "Diet Cola",
+        "price": 4,
+        "id": 4
+      },
+      {
+        "name": "7 Up",
+        "price": 6,
+        "id": 5
+      },
+      {
+        "name": "Pepsi",
+        "price": 12,
+        "id": 6
+      },
+      {
+        "name": "Grape",
+        "price": 9,
+        "id": 7
+      },
+      {
+        "name": "Soda",
+        "price": 2,
+        "id": 8
+      },
+      {
+        "name": "RedBull",
+        "price": 15,
+        "id": 9
+      },
+      {
+        "name": "Goldstar",
+        "price": 8,
+        "id": 10
+      },
+      {
+        "name": "Fanta",
+        "price": 9,
+        "id": 11
+      }
+    ],
+    "pizza": [
+      {
+        "name": "Eatalian pizza",
+        "price": 90,
+        "id": 12
+      },
+      {
+        "name": "Speedy pizza",
+        "price": 80,
+        "id": 13
+      },
+      {
+        "name": "Slices of heaven",
+        "price": 70,
+        "id": 14
+      },
+      {
+        "name": "Red tomato",
+        "price": 60,
+        "id": 15
+      },
+      {
+        "name": "Prime pizza",
+        "price": 55,
+        "id": 16
+      },
+      {
+        "name": "Buddy’s Pizza",
+        "price": 43,
+        "id": 17
+      },
+      {
+        "name": "Pizza delicious",
+        "price": 66,
+        "id": 18
+      },
+      {
+        "name": "Mama’s Pizza",
+        "price": 56,
+        "id": 19
+      },
+      {
+        "name": "American pie pizza",
+        "price": 77,
+        "id": 20
+      },
+      {
+        "name": "Here’s pizza",
+        "price": 88,
+        "id": 21
+      },
+      {
+        "name": "Corn pizza",
+        "price": 22,
+        "id": 22
+      },
+      {
+        "name": "Mashrums pizza",
+        "price": 59,
+        "id": 23
+      },
+      {
+        "name": "Olives pizza",
+        "price": 89,
+        "id": 24
+      },
+      {
+        "name": "Margarita pizza",
+        "price": 69,
+        "id": 25
+      }
+    ],
+    "city": [
+      {
+        "key": "111",
+        "text": "Tel-Aviv",
+        "myvalue": "Tel-Aviv"
+      },
+      {
+        "key": "112",
+        "text": "Dimona",
+        "myvalue": "Dimona"
+      },
+      {
+        "key": "113",
+        "text": "Beer-Sheva",
+        "myvalue": "Beer-Sheva"
+      },
+      {
+        "key": "114",
+        "text": "Arad",
+        "myvalue": "Arad"
+      },
+      {
+        "key": "115",
+        "text": "Ranana",
+        "myvalue": "Ranana"
+      },
+      {
+        "key": "116",
+        "text": "Eilat",
+        "myvalue": "Eilat"
+      },
+      {
+        "key": "117",
+        "text": "Mizpe-Ramon",
+        "myvalue": "Mizpe-Ramon"
+      },
+      {
+        "key": "118",
+        "text": "Jerusalem",
+        "myvalue": "Jerusalem"
+      },
+      {
+        "key": "119",
+        "text": "Rehovot",
+        "myvalue": "Rehovot"
+      },
+      {
+        "key": "121",
+        "text": "Ramat-Gan",
+        "myvalue": "Ramat-Gan"
+      }
+    ]
+  },
+  "order": [
+    {
+      "deliveryDetails": {
+        "fullname": "Aviram Cohen",
+        "street": "Stars",
+        "homenumber": "123",
+        "phonenumber": "0523532145",
+        "city": {
+          "key": "114",
+          "text": "Arad",
+          "myvalue": "Arad"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Cola",
+          "price": 8,
+          "id": 1
+        },
+        {
+          "name": "Eatalian pizza",
+          "price": 90,
+          "id": 12
+        }
+      ],
+      "id": 1
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Michael",
+        "street": "solider",
+        "homenumber": "555",
+        "phonenumber": "0524373256",
+        "city": {
+          "key": "117",
+          "text": "Mizpe-Ramon",
+          "myvalue": "Mizpe-Ramon"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Nestea",
+          "price": 13,
+          "id": 2
+        },
+        {
+          "name": "Sprite",
+          "price": 16,
+          "id": 3
+        },
+        {
+          "name": "7 Up",
+          "price": 6,
+          "id": 5
+        },
+        {
+          "name": "Grape",
+          "price": 9,
+          "id": 7
+        },
+        {
+          "name": "Speedy pizza",
+          "price": 80,
+          "id": 13
+        },
+        {
+          "name": "Slices of heaven",
+          "price": 70,
+          "id": 14
+        }
+      ],
+      "id": 2
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Yossi",
+        "street": "lives",
+        "homenumber": "99",
+        "phonenumber": "0542358534",
+        "city": {
+          "key": "114",
+          "text": "Arad",
+          "myvalue": "Arad"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Margarita pizza",
+          "price": 69,
+          "id": 25
+        },
+        {
+          "name": "Olives pizza",
+          "price": 89,
+          "id": 24
+        },
+        {
+          "name": "Mashrums pizza",
+          "price": 59,
+          "id": 23
+        },
+        {
+          "name": "Corn pizza",
+          "price": 22,
+          "id": 22
+        },
+        {
+          "name": "Fanta",
+          "price": 9,
+          "id": 11
+        },
+        {
+          "name": "Goldstar",
+          "price": 8,
+          "id": 10
+        },
+        {
+          "name": "RedBull",
+          "price": 15,
+          "id": 9
+        }
+      ],
+      "id": 3
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Hila",
+        "street": "stage",
+        "homenumber": "12321",
+        "phonenumber": "0548345667",
+        "city": {
+          "key": "116",
+          "text": "Eilat",
+          "myvalue": "Eilat"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Cola",
+          "price": 8,
+          "id": 1
+        },
+        {
+          "name": "Nestea",
+          "price": 13,
+          "id": 2
+        },
+        {
+          "name": "Cola",
+          "price": 8,
+          "id": 1
+        },
+        {
+          "name": "Mama’s Pizza",
+          "price": 56,
+          "id": 19
+        }
+      ],
+      "id": 4
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Adi",
+        "street": "grasias",
+        "homenumber": "9897",
+        "phonenumber": "054764835",
+        "city": {
+          "key": "118",
+          "text": "Jerusalem",
+          "myvalue": "Jerusalem"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Cola",
+          "price": 8,
+          "id": 1
+        },
+        {
+          "name": "Prime pizza",
+          "price": 55,
+          "id": 16
+        }
+      ],
+      "id": 5
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Aviad",
+        "homenumber": "323",
+        "phonenumber": "05484474432",
+        "city": {
+          "key": "112",
+          "text": "Dimona",
+          "myvalue": "Dimona"
+        },
+        "street": "Gefen"
+      },
+      "cartItems": [
+        {
+          "name": "7 Up",
+          "price": 6,
+          "id": 5
+        },
+        {
+          "name": "American pie pizza",
+          "price": 77,
+          "id": 20
+        }
+      ],
+      "id": 6
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Matan",
+        "street": "trrrr",
+        "homenumber": "9",
+        "phonenumber": "2132132123",
+        "city": {
+          "key": "116",
+          "text": "Eilat",
+          "myvalue": "Eilat"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Cola",
+          "price": 8,
+          "id": 1
+        }
+      ],
+      "id": 7
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "dsfds",
+        "street": "sdfds",
+        "homenumber": "sadsa",
+        "phonenumber": "sad",
+        "city": {
+          "key": "116",
+          "text": "Eilat",
+          "myvalue": "Eilat"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Cola",
+          "price": 8,
+          "id": 1
+        },
+        {
+          "name": "Speedy pizza",
+          "price": 80,
+          "id": 13
+        },
+        {
+          "name": "Red tomato",
+          "price": 60,
+          "id": 15
+        }
+      ],
+      "id": 8
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Idan Bokobza",
+        "street": "bridge",
+        "homenumber": "123",
+        "fieldsPhoneNumber": "0546438325",
+        "city": {
+          "key": "116",
+          "text": "Eilat",
+          "myvalue": "Eilat"
+        }
+      },
+      "cartItems": [],
+      "id": 9
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "yo",
+        "street": "jkj",
+        "homenumber": "464",
+        "fieldsPhoneNumber": "5767",
+        "city": {
+          "key": "112",
+          "text": "Dimona",
+          "myvalue": "Dimona"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Cola",
+          "price": 8,
+          "id": 1
+        },
+        {
+          "name": "Sprite",
+          "price": 16,
+          "id": 3
+        },
+        {
+          "name": "Eatalian pizza",
+          "price": 90,
+          "id": 12
+        }
+      ],
+      "id": 10
+    }
+  ]
+}
