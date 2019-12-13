@@ -6,6 +6,7 @@ import { Field,reduxForm, reset,Form } from 'redux-form'
 import { Button } from 'react-bootstrap';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-widgets/dist/css/react-widgets.css'
+import '../../css/PizzaMenuModal.css'
 
 
 class DetailsModal extends React.Component
@@ -15,11 +16,11 @@ class DetailsModal extends React.Component
         this.props.closeDetailsModal((false));
     }
     
-    renderInput = ({ input, label,placeholder,style}) => 
+    renderInput = ({ input, label,placeholder,className}) => 
     {
  
         return (
-            <div className="field" style={style} >
+            <div className={className}>
                 
                 <input { ...input } label={label} type='text' autoComplete="off" placeholder={placeholder} 
                 />
@@ -27,8 +28,8 @@ class DetailsModal extends React.Component
             );
     };
 
-    renderDropdownList = ({ input, data, valueField, textField,style,placeholder ,dropUp}) =>
-        <DropdownList style={style} {...input}
+    renderDropdownList = ({ input, data, valueField, textField,style,placeholder ,dropUp,className}) =>
+        <DropdownList className={className} {...input}
         placeholder={placeholder}
         dropUp={dropUp}
         data={data}
@@ -52,40 +53,41 @@ class DetailsModal extends React.Component
     render()
     {
         return (
-            <Modal open={this.props.modal.deliveryModalStatus} onClose={this.closeDeliveryDetailsModal} style={{height: "600px",marginLeft:"20%",marginTop:"5%"  }}closeIcon>
-            <Modal.Header>Delivery Details:
-            <Button onClick={this.closeDeliveryDetailsModal} style={{marginTop:"-50px", marginLeft:'740px',width:'120px'}} variant="danger" type='button'>Press To Exit</Button>
+            <Modal id="modalSize" open={this.props.modal.deliveryModalStatus} onClose={this.closeDeliveryDetailsModal} closeIcon>
+            <Modal.Header id="modalHeader"><div id="deliveryMessage">Delivery Details:</div>
+            <Button id="exitButton" onClick={this.closeDeliveryDetailsModal} type='button'>Press To Exit</Button>
             </Modal.Header>
-            <Modal.Content style={{padding:"3%",content:"10%" }}>
+            <Modal.Content id="modalContent">
               <Image  src='https://lavu.com/wp-content/uploads/2019/06/Pizza-Delivery-850.jpg' />
               <Modal.Description>
                     <div>
                         <Form className='ui form' onSubmit={this.props.handleSubmit(this.mySubmit)} >
                             <Field 
+                                className="fieldsFullName field"
                                 name='fullname'
                                 placeholder="Full Name"
-                                style={{marginTop:'2%',marginRight:'2%',width:'200px',display:'inline-block' }} 
                                 component={this.renderInput}
                             />
                             <Field 
+                                className="fieldsStreet field"
                                 name='street'
                                 placeholder="Street"
-                                style={{marginTop:'2%',width:'200px',display:'inline-block'}} 
                                 component={this.renderInput}
                             />
                             <Field 
+                                className="fieldsHomeNumber field"
                                 name='homenumber'
                                 placeholder="Home Number"
-                                style={{marginTop:'2%',marginLeft:'2%',marginRight:'2%', width:'200px',display:'inline-block'}} 
                                 component={this.renderInput}
                             />
                             <Field 
-                                name='phonenumber'
+                                className="fieldsPhoneNumber field"
+                                name='fieldsPhoneNumber'
                                 placeholder="Phone Number"
-                                style={{marginTop:'1%',marginLeft:'1px',marginRight:'2%', width:'200px',display:'inline-block'}} 
                                 component={this.renderInput}
                             />
                             <Field
+                                className="fieldsCity field"
                                 name="city"
                                 component={this.renderDropdownList}
                                 data={this.props.city}
@@ -93,9 +95,8 @@ class DetailsModal extends React.Component
                                 textField="text"
                                 placeholder='Choose City'
                                 dropUp={true}
-                                style={{verticalAlign:'-10px',marginLeft:'-2px',marginTop:'1%', width:'200px',display:'inline-block'}}
                             />
-                            <Button style={{ marginLeft:'2%',marginBottom:'2%',width:'200px',display:'inline-block',verticalAlign:"-12px"}} variant="danger" type='submit'>Order Now</Button>
+                            <Button id="orderButton" type='submit'>Order Now</Button>
                         </Form>
                     </div>
               </Modal.Description>
