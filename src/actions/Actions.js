@@ -29,7 +29,8 @@ export const getOrdersDetailsAction = async dispatch => {
 
 export const insertItemToCartAction = (dispatch,item) =>
 {
-    dispatch({type:ActionTypes.INSERT_ITEM,item})
+    debugger;
+    dispatch({type:ActionTypes.INSERT_ITEM,payload: item})
 }
 
 export const deliveryModalAction = (dispatch,deliveryModalStatus) =>
@@ -41,6 +42,25 @@ export const clearCartAction = (dispatch) =>
 {
     dispatch({type:ActionTypes.CLEAR_CART});
 }
+export const searchOrderNumberAndPhoneAction = (dispatch,inputToSend) =>
+{
+    dispatch({type:ActionTypes.SEARCH_PARAMETERS, payload: inputToSend});
+}
+
+export const setTotalPriceAction = (dispatch,totalprice) =>
+{
+    debugger;
+    dispatch({type:ActionTypes.SET_FIRST_PRICE, totalPrice: totalprice});
+}
+
+export const removePizzaOrDrinkFromCartAction = (dispatch,item) =>
+{
+    debugger;
+    dispatch({type:ActionTypes.REMOVE_FROM_CART,payload: item})
+}
+
+
+
 //=====================================================================================
 
 

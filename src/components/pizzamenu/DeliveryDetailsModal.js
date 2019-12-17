@@ -9,7 +9,7 @@ import 'react-widgets/dist/css/react-widgets.css'
 import '../../css/PizzaMenuModal.css'
 
 
-class DetailsModal extends React.Component
+class DeliveryDetailsModal extends React.Component
 {
     closeDeliveryDetailsModal= () =>
     {
@@ -28,7 +28,7 @@ class DetailsModal extends React.Component
             );
     };
 
-    renderDropdownList = ({ input, data, valueField, textField,style,placeholder ,dropUp,className}) =>
+    renderDropdownList = ({ input, data, valueField, textField,placeholder ,dropUp,className}) =>
         <DropdownList className={className} {...input}
         placeholder={placeholder}
         dropUp={dropUp}
@@ -40,9 +40,10 @@ class DetailsModal extends React.Component
    
     mySubmit=(deliveryDetails,dispatch)=>
     {
+        debugger;
         const order = {deliveryDetails:deliveryDetails, cartItems:this.props.cart};
         this.props.sentOrder(order);
-        dispatch(reset("MenuModalForm"));
+        dispatch(reset("MDeliveryDetailsModalForm"));
         this.props.clearCart();
         alert("Order Compleate!");
         this.closeDeliveryDetailsModal();
@@ -82,7 +83,7 @@ class DetailsModal extends React.Component
                             />
                             <Field 
                                 className="fieldsPhoneNumber field"
-                                name='fieldsPhoneNumber'
+                                name='phonenumber'
                                 placeholder="Phone Number"
                                 component={this.renderInput}
                             />
@@ -112,7 +113,7 @@ export const mapStateToProps = (state) => {
     return { 
         modal: state.modal,
         city: state.pizza.city,
-        cart: state.cart
+        cart: state.cart.items
     };
 };
 
@@ -124,6 +125,6 @@ export const mapDispatchToProps = (dispatch) => {
     } 
 };
 
-const formWrapper = connect(mapStateToProps,mapDispatchToProps)(DetailsModal);
+const formWrapper = connect(mapStateToProps,mapDispatchToProps)(DeliveryDetailsModal);
 
-export default reduxForm({form: 'MenuModalForm'})(formWrapper);
+export default reduxForm({form: 'DeliveryDetailsModalForm'})(formWrapper);
