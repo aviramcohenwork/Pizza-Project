@@ -4,7 +4,7 @@ export default (state = {}, action) => {
         case 'ADD_ORDER':
             return {...state,...action.payload};
         case 'GET_ORDERS':  
-            return { ...state, orderList:[...payload] };
+            return { ...state, ...payload };
         case 'SEARCH_PARAMETERS':
             debugger;
             return {...state, currentSearch: payload }
