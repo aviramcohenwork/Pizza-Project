@@ -1,12 +1,24 @@
-const variables ={
-    cart:[]
+const initializeState = {
+    items: [],
+    totalPrice: 0,
 }
-export default (state = [], action) => {
+export default (state = initializeState, action) => {
     switch (action.type) {
         case 'INSERT_ITEM':
-            return [...state,{...action.item} ]
+            debugger;
+            let arr=[...state.items];
+            arr.push(action.payload);
+            return {...state, items: arr }
+        case 'REMOVE_FROM_CART':
+            debugger
+            let helpArr=[...state.items];
+            helpArr.splice(helpArr.indexOf(action.payload), 1);
+            return {...state, items: helpArr }
         case 'CLEAR_CART':
-            return variables.cart
+            return initializeState.items
+        case 'SET_FIRST_PRICE':
+            debugger;
+            return {...state,totalPrice:action.totalPrice}
         default:
             return state;
     }

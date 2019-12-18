@@ -7,16 +7,15 @@ import '../../css/HomePage.css';
 const PizzaNavBar = () =>
 {
     return(
-                    
-        <div className = "row">
-
-            <div className="col-2">
+             
+        <div className = "row mycolornav">
+            <div className="col-lg-1 ">
                 <Navbar.Brand href="/">
                     <Image height='80px' src="https://www.fasteat.xyz/upload/1559006953-best-italian-pizza-icon-sticker-1542410429.1995544.png"></Image>
                 </Navbar.Brand>
             </div>
 
-            <div className="col-6 buttoninlink ">
+            <div className="col-lg-7 buttoninlink ">
 
                 <Link to="/Menu" className="linkbuttonstag">
                     <Button className="buttoninlink">Menu</Button>
@@ -32,30 +31,31 @@ const PizzaNavBar = () =>
 
             </div>
 
-            <div className="col-4 iconlink">
+            <div className="col-lg-4 iconlink">
 
-                <Link href="https://www.facebook.com" className="linkicontag">
+                <a href="https://www.facebook.com" className="linkicontag">
                     <Button className="iconbuttons">
                         <Icon  name='facebook'/>Facebook
                     </Button>
-                </Link>
+                </a>
 
-                <Link href="https://twitter.com/" className="linkicontag">
+                <a href="https://twitter.com/" className="linkicontag">
                     <Button className="iconbuttons">
                         <Icon  name='twitter'/>Twitter
                     </Button>
-                </Link>
+                </a>
 
-                <Link href="https://www.facebook.com" className="linkicontag">
+                <a href="https://www.facebook.com" className="linkicontag">
                     <Button className="iconbuttons">
                         <Icon   name='instagram'/>Instagram
                     </Button>
-                </Link>
+                </a>
 
             </div>
         
     </div>
     )
 }
+
 
 export default PizzaNavBar;
