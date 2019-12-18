@@ -105,10 +105,11 @@ class PizzaMenuComponent extends React.Component
                        <h3 id="totalpricetext">Total Price : {this.props.totalPrice}</h3>
                         <Button  id="orderButtonCart"  onClick={this.openDeliveryDetailsModal}>Order Now</Button>
                     </Card>
+                    
                 </div>
 
             </div>
-
+                               
             <Image className="chooseDrinkPizzaButtons" src={drinkChoose}></Image>  
             <Table id="tableDrinkPizaaSize" >
                 <Table.Header >
