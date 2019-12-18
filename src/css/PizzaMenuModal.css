@@ -27,6 +27,8 @@
 #modalHeader #deliveryMessage{
     background:#dc3545 ;
     font-size: 25px;
+    color: white;
+
 }
 
 #modalContent .fieldsFullName{
