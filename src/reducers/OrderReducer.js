@@ -14,6 +14,7 @@ export default (state = initializeState, action) => {
         case 'GET_ORDERS':  
             debugger;
             return { ...state,orderList:action.payload};
+
         case 'SEARCH_PARAMETERS':
             debugger;
             return {...state, currentSearch: payload }
