@@ -16,7 +16,51 @@
     margin-left:30%;
 }
 
-/* .ui.inverted.segment{
-    margin-left:30%;
-    margin-right:30%;
-} */
+#detailsButtons{
+    background-color: #dc3545;
+    color: white;
+}
+
+#modalOrderSize{
+   
+    height: 90%;
+    width: 70%;
+    margin-left:15%;
+    margin-top:1%;
+}
+
+#exitButton{
+    color: white;
+    width: 200px;
+    margin-left: 85%;
+    margin-top: -4%;
+    vertical-align: 150%;
+}
+
+#modalHeader{
+    background:#dc3545 ;
+    font-weight: bold;
+    
+}
+
+.detailsInformation{
+    background:#dc3545 ;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+#modalContent{
+    height: 100%;
+    background:#dc3545 ;
+
+}
+
+#deliveryMessageOrder{
+    background:#dc3545 ;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+

@@ -10,14 +10,13 @@ export const getMenuDetailsAction = async dispatch => {
 };
 
 export const addOrderAction = async (dispatch,order) => {
+    debugger;
     await pizza.post("/order", order);
-    // dispatch({ type: ActionTypes.ADD_ORDER, payload: response.data });
+    dispatch({ type: ActionTypes.ADD_ORDER, payload: order });
 };
 
 export const getOrdersDetailsAction = async dispatch => {
-    debugger;
     const response = await pizza.get("/order");
-    debugger;
     dispatch({ type: ActionTypes.GET_ORDERS, payload: response.data });
 };
 
@@ -59,6 +58,12 @@ export const removePizzaOrDrinkFromCartAction = (dispatch,item) =>
     dispatch({type:ActionTypes.REMOVE_FROM_CART,payload: item})
 }
 
+
+export const addCurrentItemAction = (dispatch,item) =>
+{
+    debugger;
+    dispatch({type:ActionTypes.ADD_CURRENT_ITEM,payload: item})
+}
 
 
 //=====================================================================================

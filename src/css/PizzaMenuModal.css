@@ -1,13 +1,13 @@
 #modalSize{
    
-    height: 600px;
+    height: 64%;
     margin-left:20%;
     margin-top:5%;
 }
 
 #exitButton{
     margin-top:-50px;
-    margin-left:740px;
+    margin-left:75%;
     width:120px;
     background: black;
     border: #dc3545;
@@ -26,9 +26,8 @@
 
 #modalHeader #deliveryMessage{
     background:#dc3545 ;
-    font-size: 25px;
     color: white;
-
+    font-size: 25px;
 }
 
 #modalContent .fieldsFullName{
