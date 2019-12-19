@@ -15,7 +15,7 @@ export default (state = initializeState, action) => {
             helpArr.splice(helpArr.indexOf(action.payload), 1);
             return {...state, items: helpArr }
         case 'CLEAR_CART':
-            return initializeState.items
+            return initializeState;
         case 'SET_FIRST_PRICE':
             debugger;
             return {...state,totalPrice:action.totalPrice}
