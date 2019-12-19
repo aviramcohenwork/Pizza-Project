@@ -3,56 +3,67 @@
     "drinks": [
       {
         "name": "Cola",
+        "picture": "https://www.graffiti-online.co.il/pub/media/catalog/product/cache/2af407b858ccf3e961c81618f677b85c/_/-/_-_-_.png",
         "price": 8,
         "id": 1
       },
       {
         "name": "Nestea",
+        "picture": "https://www.osem.co.il/tm-content/uploads/2015/06/12241845_8005200826537-308x308.png",
         "price": 13,
         "id": 2
       },
       {
         "name": "Sprite",
+        "picture": "https://distribuidoracampostrini.com/wp-content/uploads/2019/07/sprite-1.5-lt.png",
         "price": 16,
         "id": 3
       },
       {
         "name": "Diet Cola",
+        "picture": "https://5.imimg.com/data5/GG/GG/GLADMIN-/diet-coke-250x250.png",
         "price": 4,
         "id": 4
       },
       {
         "name": "7 Up",
+        "picture": "https://7up.in/images/products/2.25l-bottle.png",
         "price": 6,
         "id": 5
       },
       {
         "name": "Pepsi",
+        "picture": "https://chennaisuperstore.com/wp-content/uploads/2019/07/pepsi-soft-drink-600ml-chennai-e1564053992809.png",
         "price": 12,
         "id": 6
       },
       {
         "name": "Grape",
+        "picture": "http://telameladrinks.com/wp-content/themes/telameladrinks/images/mobile/feature_img.png",
         "price": 9,
         "id": 7
       },
       {
         "name": "Soda",
+        "picture": "https://bestandkosher.com/wp-content/uploads/2018/03/soda-water-schwepps.png",
         "price": 2,
         "id": 8
       },
       {
         "name": "RedBull",
+        "picture": "https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c1e9.png",
         "price": 15,
         "id": 9
       },
       {
         "name": "Goldstar",
+        "picture": "https://www.paneco.co.il/content/images/thumbs/0004448_-.png",
         "price": 8,
         "id": 10
       },
       {
         "name": "Fanta",
+        "picture": "https://chennaisuperstore.com/wp-content/uploads/2019/07/Fanta-600ml-soft-drink-chennai-600x600.png",
         "price": 9,
         "id": 11
       }
@@ -60,71 +71,85 @@
     "pizza": [
       {
         "name": "Eatalian pizza",
+        "picture": "http://www.greatworldtr.com/wp-content/uploads/2017/03/%C4%B0talyan-Pizza-1.png",
         "price": 90,
         "id": 12
       },
       {
         "name": "Speedy pizza",
+        "picture": "http://speedysinghkitchen.com/wp-content/uploads/2019/10/ONION-CAPSICUM-PIZZA-300x300.png",
         "price": 80,
         "id": 13
       },
       {
         "name": "Slices of heaven",
+        "picture": "https://thepizzaaffair.mc/files/menu_items/129-l.png",
         "price": 70,
         "id": 14
       },
       {
         "name": "Red tomato",
+        "picture": "http://www.pizzaworld.me/wp-content/uploads/2019/05/deepdish-pizza.png",
         "price": 60,
         "id": 15
       },
       {
         "name": "Prime pizza",
+        "picture": "http://ohgodmywifeisgerman.files.wordpress.com/2017/03/dominos-pizza-bombay.png",
         "price": 55,
         "id": 16
       },
       {
         "name": "Buddy’s Pizza",
+        "picture": "https://s3-us-west-1.amazonaws.com/paradeigm-social/ZrKBvuhhRHWYw2adt2Yn_Q8xbcWFRDSw5lKRlMLK6_12-0705-Pizza-Port-Food-San-Francisco.png",
         "price": 43,
         "id": 17
       },
       {
         "name": "Pizza delicious",
+        "picture": "http://levantespizza.com/wp-content/uploads/Pizza_Slider_2.png",
         "price": 66,
         "id": 18
       },
       {
         "name": "Mama’s Pizza",
+        "picture": "http://www.pizzeriadelmatti.com/assets/weekend_menu/1541607786_Kids-Ham-_-Pineapple.png",
         "price": 56,
         "id": 19
       },
       {
         "name": "American pie pizza",
+        "picture": "https://peaceloveandpizza.com/staging/wp-content/uploads/2019/04/Viva-Las-Vegan-min-500x333.png",
         "price": 77,
         "id": 20
       },
       {
         "name": "Here’s pizza",
+        "picture": "https://miro.medium.com/max/3076/1*KgoVNRwF7ouoBu25UVVRqw.png",
         "price": 88,
         "id": 21
       },
       {
         "name": "Corn pizza",
+        "picture": "https://s3-eu-west-1.amazonaws.com/straus/media/products2/6e651a56428246f9a74f2014c1a4de1e.png",
         "price": 22,
         "id": 22
       },
       {
         "name": "Mashrums pizza",
+        "picture": "https://www.jing.fm/clipimg/full/215-2154769_mushroom-pizza-chicken-and-mushrooms-pizza.png",
         "price": 59,
         "id": 23
       },
       {
         "name": "Olives pizza",
+        "picture": "https://mybuildapizza.com/wp-content/uploads/2018/12/Loaded-Supreme-Online-e1546192338498.png",
         "price": 89,
         "id": 24
       },
       {
         "name": "Margarita pizza",
+        "picture": "https://pngimage.net/wp-content/uploads/2018/06/pizza-margarita-png-2.png",
         "price": 69,
         "id": 25
       }
@@ -186,35 +211,44 @@
     {
       "deliveryDetails": {
         "fullname": "Aviram Cohen",
-        "street": "Stars",
-        "homenumber": "123",
-        "phonenumber": "0523532145",
+        "street": "A",
+        "homenumber": "86",
+        "phonenumber": "0546438326",
         "city": {
-          "key": "114",
-          "text": "Arad",
-          "myvalue": "Arad"
+          "key": "113",
+          "text": "Beer-Sheva",
+          "myvalue": "Beer-Sheva"
         }
       },
       "cartItems": [
         {
-          "name": "Cola",
-          "price": 8,
-          "id": 1
+          "name": "Margarita pizza",
+          "picture": "https://pngimage.net/wp-content/uploads/2018/06/pizza-margarita-png-2.png",
+          "price": 69,
+          "id": 25
         },
         {
-          "name": "Eatalian pizza",
-          "price": 90,
-          "id": 12
+          "name": "Sprite",
+          "picture": "https://distribuidoracampostrini.com/wp-content/uploads/2019/07/sprite-1.5-lt.png",
+          "price": 16,
+          "id": 3
+        },
+        {
+          "name": "Cola",
+          "picture": "https://www.graffiti-online.co.il/pub/media/catalog/product/cache/2af407b858ccf3e961c81618f677b85c/_/-/_-_-_.png",
+          "price": 8,
+          "id": 1
         }
       ],
+      "totalPrice": 93,
       "id": 1
     },
     {
       "deliveryDetails": {
         "fullname": "Michael",
-        "street": "solider",
-        "homenumber": "555",
-        "phonenumber": "0524373256",
+        "street": "star",
+        "homenumber": "2",
+        "phonenumber": "054-6438326",
         "city": {
           "key": "117",
           "text": "Mizpe-Ramon",
@@ -223,44 +257,27 @@
       },
       "cartItems": [
         {
-          "name": "Nestea",
-          "price": 13,
-          "id": 2
+          "name": "Cola",
+          "picture": "https://www.graffiti-online.co.il/pub/media/catalog/product/cache/2af407b858ccf3e961c81618f677b85c/_/-/_-_-_.png",
+          "price": 8,
+          "id": 1
         },
         {
-          "name": "Sprite",
-          "price": 16,
-          "id": 3
-        },
-        {
-          "name": "7 Up",
-          "price": 6,
-          "id": 5
-        },
-        {
-          "name": "Grape",
-          "price": 9,
-          "id": 7
-        },
-        {
-          "name": "Speedy pizza",
-          "price": 80,
-          "id": 13
-        },
-        {
-          "name": "Slices of heaven",
-          "price": 70,
-          "id": 14
+          "name": "Eatalian pizza",
+          "picture": "http://www.greatworldtr.com/wp-content/uploads/2017/03/%C4%B0talyan-Pizza-1.png",
+          "price": 90,
+          "id": 12
         }
       ],
+      "totalPrice": 89,
       "id": 2
     },
     {
       "deliveryDetails": {
-        "fullname": "Yossi",
-        "street": "lives",
-        "homenumber": "99",
-        "phonenumber": "0542358534",
+        "fullname": "Adi",
+        "street": "star",
+        "homenumber": "90",
+        "phonenumber": "0524282123",
         "city": {
           "key": "114",
           "text": "Arad",
@@ -269,85 +286,208 @@
       },
       "cartItems": [
         {
-          "name": "Margarita pizza",
-          "price": 69,
-          "id": 25
-        },
-        {
-          "name": "Olives pizza",
-          "price": 89,
-          "id": 24
-        },
-        {
-          "name": "Mashrums pizza",
-          "price": 59,
-          "id": 23
-        },
-        {
-          "name": "Corn pizza",
-          "price": 22,
-          "id": 22
-        },
-        {
           "name": "Fanta",
+          "picture": "https://chennaisuperstore.com/wp-content/uploads/2019/07/Fanta-600ml-soft-drink-chennai-600x600.png",
           "price": 9,
           "id": 11
         },
         {
-          "name": "Goldstar",
-          "price": 8,
-          "id": 10
-        },
-        {
           "name": "RedBull",
+          "picture": "https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c1e9.png",
           "price": 15,
           "id": 9
+        },
+        {
+          "name": "Pepsi",
+          "picture": "https://chennaisuperstore.com/wp-content/uploads/2019/07/pepsi-soft-drink-600ml-chennai-e1564053992809.png",
+          "price": 12,
+          "id": 6
         }
       ],
+      "totalPrice": 36,
       "id": 3
     },
     {
       "deliveryDetails": {
-        "fullname": "Hila",
-        "street": "stage",
-        "homenumber": "12321",
-        "phonenumber": "0548345667",
+        "fullname": "Menash",
+        "street": "soildier",
+        "homenumber": "982",
+        "phonenumber": "0546478343",
         "city": {
-          "key": "116",
-          "text": "Eilat",
-          "myvalue": "Eilat"
+          "key": "115",
+          "text": "Ranana",
+          "myvalue": "Ranana"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Buddy’s Pizza",
+          "picture": "https://s3-us-west-1.amazonaws.com/paradeigm-social/ZrKBvuhhRHWYw2adt2Yn_Q8xbcWFRDSw5lKRlMLK6_12-0705-Pizza-Port-Food-San-Francisco.png",
+          "price": 43,
+          "id": 17
+        }
+      ],
+      "totalPrice": 43,
+      "id": 4
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Ofer",
+        "street": "fish",
+        "homenumber": "8723",
+        "phonenumber": "052999885",
+        "city": {
+          "key": "113",
+          "text": "Beer-Sheva",
+          "myvalue": "Beer-Sheva"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Margarita pizza",
+          "picture": "https://pngimage.net/wp-content/uploads/2018/06/pizza-margarita-png-2.png",
+          "price": 69,
+          "id": 25
+        },
+        {
+          "name": "Fanta",
+          "picture": "https://chennaisuperstore.com/wp-content/uploads/2019/07/Fanta-600ml-soft-drink-chennai-600x600.png",
+          "price": 9,
+          "id": 11
+        },
+        {
+          "name": "Grape",
+          "picture": "http://telameladrinks.com/wp-content/themes/telameladrinks/images/mobile/feature_img.png",
+          "price": 9,
+          "id": 7
+        }
+      ],
+      "totalPrice": 87,
+      "id": 5
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Idan Bokobza ",
+        "street": "ferah",
+        "homenumber": "8723",
+        "phonenumber": "052999885",
+        "city": {
+          "key": "113",
+          "text": "Beer-Sheva",
+          "myvalue": "Beer-Sheva"
         }
       },
       "cartItems": [
         {
           "name": "Cola",
+          "picture": "https://www.graffiti-online.co.il/pub/media/catalog/product/cache/2af407b858ccf3e961c81618f677b85c/_/-/_-_-_.png",
           "price": 8,
           "id": 1
         },
         {
-          "name": "Nestea",
-          "price": 13,
-          "id": 2
+          "name": "Pepsi",
+          "picture": "https://chennaisuperstore.com/wp-content/uploads/2019/07/pepsi-soft-drink-600ml-chennai-e1564053992809.png",
+          "price": 12,
+          "id": 6
         },
         {
-          "name": "Cola",
-          "price": 8,
-          "id": 1
+          "name": "American pie pizza",
+          "picture": "https://peaceloveandpizza.com/staging/wp-content/uploads/2019/04/Viva-Las-Vegan-min-500x333.png",
+          "price": 77,
+          "id": 20
+        },
+        {
+          "name": "Margarita pizza",
+          "picture": "https://pngimage.net/wp-content/uploads/2018/06/pizza-margarita-png-2.png",
+          "price": 69,
+          "id": 25
+        },
+        {
+          "name": "Olives pizza",
+          "picture": "https://mybuildapizza.com/wp-content/uploads/2018/12/Loaded-Supreme-Online-e1546192338498.png",
+          "price": 89,
+          "id": 24
         },
         {
           "name": "Mama’s Pizza",
+          "picture": "http://www.pizzeriadelmatti.com/assets/weekend_menu/1541607786_Kids-Ham-_-Pineapple.png",
+          "price": 56,
+          "id": 19
+        },
+        {
+          "name": "Mama’s Pizza",
+          "picture": "http://www.pizzeriadelmatti.com/assets/weekend_menu/1541607786_Kids-Ham-_-Pineapple.png",
           "price": 56,
           "id": 19
         }
       ],
-      "id": 4
+      "totalPrice": 367,
+      "id": 6
     },
     {
       "deliveryDetails": {
-        "fullname": "Adi",
-        "street": "grasias",
-        "homenumber": "9897",
-        "phonenumber": "054764835",
+        "fullname": "Amit",
+        "street": "lavan",
+        "homenumber": "872",
+        "phonenumber": "05464748932",
+        "city": {
+          "key": "117",
+          "text": "Mizpe-Ramon",
+          "myvalue": "Mizpe-Ramon"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Cola",
+          "picture": "https://www.graffiti-online.co.il/pub/media/catalog/product/cache/2af407b858ccf3e961c81618f677b85c/_/-/_-_-_.png",
+          "price": 8,
+          "id": 1
+        },
+        {
+          "name": "Red tomato",
+          "picture": "http://www.pizzaworld.me/wp-content/uploads/2019/05/deepdish-pizza.png",
+          "price": 60,
+          "id": 15
+        }
+      ],
+      "totalPrice": 23,
+      "id": 7
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Ravit",
+        "street": "bak",
+        "homenumber": "9872",
+        "phonenumber": "0567343433",
+        "city": {
+          "key": "114",
+          "text": "Arad",
+          "myvalue": "Arad"
+        }
+      },
+      "cartItems": [
+        {
+          "name": "Cola",
+          "picture": "https://www.graffiti-online.co.il/pub/media/catalog/product/cache/2af407b858ccf3e961c81618f677b85c/_/-/_-_-_.png",
+          "price": 8,
+          "id": 1
+        },
+        {
+          "name": "Slices of heaven",
+          "picture": "https://thepizzaaffair.mc/files/menu_items/129-l.png",
+          "price": 70,
+          "id": 14
+        }
+      ],
+      "totalPrice": 78,
+      "id": 8
+    },
+    {
+      "deliveryDetails": {
+        "fullname": "Gabi",
+        "street": "of",
+        "homenumber": "232",
+        "phonenumber": "9857554",
         "city": {
           "key": "118",
           "text": "Jerusalem",
@@ -357,139 +497,65 @@
       "cartItems": [
         {
           "name": "Cola",
+          "picture": "https://www.graffiti-online.co.il/pub/media/catalog/product/cache/2af407b858ccf3e961c81618f677b85c/_/-/_-_-_.png",
           "price": 8,
           "id": 1
         },
         {
-          "name": "Prime pizza",
-          "price": 55,
-          "id": 16
-        }
-      ],
-      "id": 5
-    },
-    {
-      "deliveryDetails": {
-        "fullname": "Aviad",
-        "homenumber": "323",
-        "phonenumber": "05484474432",
-        "city": {
-          "key": "112",
-          "text": "Dimona",
-          "myvalue": "Dimona"
-        },
-        "street": "Gefen"
-      },
-      "cartItems": [
-        {
-          "name": "7 Up",
-          "price": 6,
-          "id": 5
+          "name": "Eatalian pizza",
+          "picture": "http://www.greatworldtr.com/wp-content/uploads/2017/03/%C4%B0talyan-Pizza-1.png",
+          "price": 90,
+          "id": 12
         },
         {
-          "name": "American pie pizza",
-          "price": 77,
-          "id": 20
+          "name": "Pizza delicious",
+          "picture": "http://levantespizza.com/wp-content/uploads/Pizza_Slider_2.png",
+          "price": 66,
+          "id": 18
         }
       ],
-      "id": 6
-    },
-    {
-      "deliveryDetails": {
-        "fullname": "Matan",
-        "street": "trrrr",
-        "homenumber": "9",
-        "phonenumber": "2132132123",
-        "city": {
-          "key": "116",
-          "text": "Eilat",
-          "myvalue": "Eilat"
-        }
-      },
-      "cartItems": [
-        {
-          "name": "Cola",
-          "price": 8,
-          "id": 1
-        }
-      ],
-      "id": 7
-    },
-    {
-      "deliveryDetails": {
-        "fullname": "dsfds",
-        "street": "sdfds",
-        "homenumber": "sadsa",
-        "phonenumber": "sad",
-        "city": {
-          "key": "116",
-          "text": "Eilat",
-          "myvalue": "Eilat"
-        }
-      },
-      "cartItems": [
-        {
-          "name": "Cola",
-          "price": 8,
-          "id": 1
-        },
-        {
-          "name": "Speedy pizza",
-          "price": 80,
-          "id": 13
-        },
-        {
-          "name": "Red tomato",
-          "price": 60,
-          "id": 15
-        }
-      ],
-      "id": 8
-    },
-    {
-      "deliveryDetails": {
-        "fullname": "Idan Bokobza",
-        "street": "bridge",
-        "homenumber": "123",
-        "fieldsPhoneNumber": "0546438325",
-        "city": {
-          "key": "116",
-          "text": "Eilat",
-          "myvalue": "Eilat"
-        }
-      },
-      "cartItems": [],
+      "totalPrice": 164,
       "id": 9
     },
     {
       "deliveryDetails": {
-        "fullname": "yo",
-        "street": "jkj",
-        "homenumber": "464",
-        "fieldsPhoneNumber": "5767",
+        "fullname": "losha",
+        "street": "yark",
+        "homenumber": "9",
+        "phonenumber": "0543736254",
         "city": {
-          "key": "112",
-          "text": "Dimona",
-          "myvalue": "Dimona"
+          "key": "117",
+          "text": "Mizpe-Ramon",
+          "myvalue": "Mizpe-Ramon"
         }
       },
       "cartItems": [
         {
           "name": "Cola",
+          "picture": "https://www.graffiti-online.co.il/pub/media/catalog/product/cache/2af407b858ccf3e961c81618f677b85c/_/-/_-_-_.png",
           "price": 8,
           "id": 1
         },
         {
-          "name": "Sprite",
-          "price": 16,
-          "id": 3
+          "name": "Nestea",
+          "picture": "https://www.osem.co.il/tm-content/uploads/2015/06/12241845_8005200826537-308x308.png",
+          "price": 13,
+          "id": 2
         },
         {
-          "name": "Eatalian pizza",
-          "price": 90,
-          "id": 12
+          "name": "Slices of heaven",
+          "picture": "https://thepizzaaffair.mc/files/menu_items/129-l.png",
+          "price": 70,
+          "id": 14
+        },
+        {
+          "name": "Red tomato",
+          "picture": "http://www.pizzaworld.me/wp-content/uploads/2019/05/deepdish-pizza.png",
+          "price": 60,
+          "id": 15
         }
       ],
+      "totalPrice": 151,
       "id": 10
     }
   ]

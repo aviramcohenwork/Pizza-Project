@@ -4,6 +4,7 @@ import {HomePagePictureDataOne} from '../../const/ConstLinks'
 
 import '../../css/HomePage.css';
 
+
 class PizzaHomePageComponent extends React.Component
 {
     render()

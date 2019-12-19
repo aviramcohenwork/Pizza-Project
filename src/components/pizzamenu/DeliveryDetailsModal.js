@@ -41,9 +41,9 @@ class DeliveryDetailsModal extends React.Component
     mySubmit=(deliveryDetails,dispatch)=>
     {
         debugger;
-        const order = {deliveryDetails:deliveryDetails, cartItems:this.props.cart};
+        const order = {deliveryDetails:deliveryDetails, cartItems:this.props.cart,totalPrice:this.props.totalPrice};
         this.props.sentOrder(order);
-        dispatch(reset("MDeliveryDetailsModalForm"));
+        dispatch(reset("DeliveryDetailsModalForm"));
         this.props.clearCart();
         alert("Order Compleate!");
         this.closeDeliveryDetailsModal();
@@ -92,7 +92,7 @@ class DeliveryDetailsModal extends React.Component
                                 name="city"
                                 component={this.renderDropdownList}
                                 data={this.props.city}
-                                valueField="myvalue"
+                                valueField="value"
                                 textField="text"
                                 placeholder='Choose City'
                                 dropUp={true}
@@ -113,7 +113,8 @@ export const mapStateToProps = (state) => {
     return { 
         modal: state.modal,
         city: state.pizza.city,
-        cart: state.cart.items
+        cart: state.cart.items,
+        totalPrice: state.cart.totalPrice,
     };
 };
 
