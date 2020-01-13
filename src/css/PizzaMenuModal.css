@@ -5,10 +5,10 @@
     margin-top:5%;
 }
 
-#exitButton{
+#exitButtonModal{
     margin-top:-50px;
     margin-left:75%;
-    width:120px;
+    width:200px;
     background: black;
     border: #dc3545;
 }
