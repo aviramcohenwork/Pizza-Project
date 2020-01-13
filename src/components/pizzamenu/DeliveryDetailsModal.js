@@ -11,11 +11,23 @@ import '../../css/PizzaMenuModal.css'
 
 class DeliveryDetailsModal extends React.Component
 {
+    
+     /**
+     * input: Empty.
+     * output: Change value from true to false.
+     * Function that change value deliveryModalStatus in state from true to false and close the order modal.
+     */
     closeDeliveryDetailsModal= () =>
     {
         this.props.closeDetailsModal((false));
     }
     
+        
+     /**
+     * input: Get varibales and create a new dummp component that preview this information.
+     * output: New desing to fields
+     * Function that change the desing of fields and preview a new design.
+     */
     renderInput = ({ input, label,placeholder,className}) => 
     {
  
@@ -28,6 +40,12 @@ class DeliveryDetailsModal extends React.Component
             );
     };
 
+    
+     /**
+     * input: Get varibales and create a new dummp component that preview this information.
+     * output: New desing to fields
+     * Function that change the desing of fields and preview a new design.
+     */
     renderDropdownList = ({ input, data, valueField, textField,placeholder ,dropUp,className}) =>
         <DropdownList className={className} {...input}
         placeholder={placeholder}
@@ -37,7 +55,11 @@ class DeliveryDetailsModal extends React.Component
         textField={textField}
      />
 
-   
+     /**
+     * input: Get delivery details information.
+     * output: Sent the order, get delivery details information and get the item in cart and combine them to one order and sent it to state and to json server.
+     * Function get details to delivery and items in cart and combine to one object save in data base and in state, also clear from.
+     */
     mySubmit=(deliveryDetails,dispatch)=>
     {
         debugger;
@@ -56,7 +78,7 @@ class DeliveryDetailsModal extends React.Component
         return (
             <Modal id="modalSize" open={this.props.modal.deliveryModalStatus} onClose={this.closeDeliveryDetailsModal} closeIcon>
             <Modal.Header id="modalHeader"><div id="deliveryMessage">Delivery Details:</div>
-            <Button id="exitButton" onClick={this.closeDeliveryDetailsModal} type='button'>Press To Exit</Button>
+            <Button id="exitButtonModal" onClick={this.closeDeliveryDetailsModal} type='button'>Press To Exit</Button>
             </Modal.Header>
             <Modal.Content id="modalContent">
               <Image  src='https://lavu.com/wp-content/uploads/2019/06/Pizza-Delivery-850.jpg' />
@@ -109,6 +131,11 @@ class DeliveryDetailsModal extends React.Component
 
 }
 
+/**
+ * input: state
+ * output: listener.
+ * Function listener to all the current fields and if we got change we run the render function again. 
+ */
 export const mapStateToProps = (state) => {
     return { 
         modal: state.modal,
@@ -118,6 +145,11 @@ export const mapStateToProps = (state) => {
     };
 };
 
+/**
+ * input: dispatch
+ * output: Actions.
+ * Function to active a action and sent them to the reudcer and save information in DB. 
+ */
 export const mapDispatchToProps = (dispatch) => {
     return{
         closeDetailsModal : (modalStatus) =>  deliveryModalAction(dispatch,modalStatus),

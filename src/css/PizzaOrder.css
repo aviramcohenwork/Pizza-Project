@@ -30,10 +30,11 @@
 }
 
 #exitButton{
+    background-color: black;
     color: white;
     width: 200px;
     margin-left: 85%;
-    margin-top: -4%;
+    margin-top: -7%;
     vertical-align: 150%;
 }
 
@@ -63,4 +64,3 @@
     font-size: 20px;
     font-weight: 600;
 }
-
