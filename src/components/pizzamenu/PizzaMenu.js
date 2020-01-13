@@ -1,7 +1,7 @@
 import React from 'react';
 import {getMenuDetailsAction,insertItemToCartAction,deliveryModalAction,setTotalPriceAction,removePizzaOrDrinkFromCartAction} from '../../actions/Actions'
 import { connect } from 'react-redux';
-import {Table,Button,Image,Divider,Form, Grid, Segment,Card,Feed} from 'semantic-ui-react';
+import {Table,Button,Image,Card,Feed} from 'semantic-ui-react';
 import drinkChoose from '../../pictures/aa.png';
 import cartChoose from '../../pictures/cart.png';
 import pizzaChoose from '../../pictures/bb.png';
@@ -10,18 +10,21 @@ import DeliveryDetailsModal from './DeliveryDetailsModal';
 import '../../css/PizzaMenu.css'
 class PizzaMenuComponent extends React.Component
 {
-    //Function will activate one time after the render() is running 
+
+    /** 
+     * input: Empty.
+     * output: Activate the render() again in the end.
+     * Lifecycle method will activate the render() again in the end, is running and get details form the json server.
+    */
     componentDidMount(){
         this.props.getMenuDetails();
-        // this.props.getTotalPrice();
     }
 
-    // /** 
-    //  * @param item this object id int
-    //  * @returns alert with message
-    //  * 
-    //  */
-
+    /**
+     * input: Get item with all details about the item.
+     * output: Add the item to cart save in state and calculate .
+     * Function Add item to cart in state and save the choose.
+     */
     addPizzaOrDrinkToCart = (item) =>
     {
         debugger;
@@ -29,6 +32,11 @@ class PizzaMenuComponent extends React.Component
         this.calculateTotalPrice(item);
     };
 
+     /**
+     * input: Get item with all details about the item.
+     * output: Calculate the price from item.
+     * Function Get a item and calcualte the price in item and calculate the total price of all items.
+     */
     calculateTotalPrice = (item) =>
     {
         debugger;
@@ -38,11 +46,22 @@ class PizzaMenuComponent extends React.Component
         this.props.setTotalPrice(totalPrice);
     }
 
+     /**
+     * input: Empty
+     * output: Change value from false to true
+     * Function that change value deliveryModalStatus in state from false to true and open the order modal.
+     */
     openDeliveryDetailsModal= () =>
     {
         this.props.showDetailsModal((true));
     }
 
+
+     /**
+     * input: Get item with all details about the item.
+     * output: Remove from state in cart the item that we sent to function, and update total price;
+     * Function remove item from cart and update total price.
+     */
     removeItemFromCard = (item)=>
     {
         this.props.removePizzaOrDrinkFromCart(item);
@@ -51,7 +70,13 @@ class PizzaMenuComponent extends React.Component
         totalPrice=totalPrice-currentprice;
         this.props.setTotalPrice(totalPrice);
     }
-  
+    
+
+     /**
+     * input: Empty.
+     * output: Dummy function to return all information in div.
+     * Function display all logic in the menu.
+     */
     showMenu = () =>
     (
         <div>
@@ -80,7 +105,7 @@ class PizzaMenuComponent extends React.Component
                                 {this.props.itemsInCart&&this.props.itemsInCart.map((item,idx)=>
                                 {
                                     return(
-                                        <Feed.Event>
+                                        <Feed.Event key={idx}>
                                             <Feed.Content>
                                                 <Feed.Summary>
                                                     <Table>
@@ -104,6 +129,7 @@ class PizzaMenuComponent extends React.Component
                        <h3 id="totalpricetext">Total Price : {this.props.totalPrice}</h3>
                         <Button  id="orderButtonCart"  onClick={this.openDeliveryDetailsModal}>Order Now</Button>
                     </Card>
+
                 </div>
 
             </div>
@@ -158,6 +184,12 @@ class PizzaMenuComponent extends React.Component
         </div>
     )
 
+    
+     /**
+     * input: Empty.
+     * output: return all the logic.
+     * Function activate the menu page.
+     */
     render()
     {
         return (
@@ -168,6 +200,13 @@ class PizzaMenuComponent extends React.Component
         )
     }
 }
+
+
+/**
+ * input: state
+ * output: listener.
+ * Function listener to all the current fields and if we got change we run the render function again. 
+ */
 export const mapStateToProps = (state) => {
     return { 
         pizza: state.pizza,
@@ -176,6 +215,11 @@ export const mapStateToProps = (state) => {
     };
 };
 
+/**
+ * input: dispatch
+ * output: Actions.
+ * Function to active a action and sent them to the reudcer and save information in DB. 
+ */
 export const mapDispatchToProps = (dispatch) => {
     return{
         getMenuDetails : () => getMenuDetailsAction(dispatch),

@@ -7,6 +7,11 @@ import '../../css/PizzaOrder.css';
 
 class PizzaOrdersComponent extends React.Component
 { 
+    /** 
+     * input: Empty.
+     * output: Activate the render() again in the end.
+     * Lifecycle method will activate the render() again in the end, is running and get details from the json server.
+    */
      componentDidMount(){
          this.props.getOrdersDetailsFormDB();
      }
