@@ -1,22 +1,40 @@
-import pizza from '../api/pizza'
+import {Location,PizzaAndDrinks,SaveOrder,GetOrders} from '../api/pizza'
 import {ActionTypes} from '../const/ActionsTypes'
 
 
-//Action for server
+//Action for backend server
+export const getLocationsDetailsAction = async dispatch => {
+    const response = await Location.get("/Locations");
+    dispatch({ type: ActionTypes.GET_LOCATIONS, payload: response.data });
+};
 
-export const getMenuDetailsAction = async dispatch => {
-    const response = await pizza.get("/menu");
+export const getDrinksDetailsAction = async dispatch => {
+    const response = await PizzaAndDrinks.get("/DrinkDetails");
+    dispatch({ type: ActionTypes.GET_DRINKS, payload: response.data });
+};
+
+export const getPizzaDetailsAction = async dispatch => {
+    const response = await PizzaAndDrinks.get("/PizzaDetails");
     dispatch({ type: ActionTypes.GET_MENU, payload: response.data });
 };
 
-export const addOrderAction = async (dispatch,order) => {
+export const sentOrderAction = async (dispatch,orders) => {
+    
+    await SaveOrder.post('/SaveOrder',{orders});
     debugger;
-    await pizza.post("/order", order);
-    dispatch({ type: ActionTypes.ADD_ORDER, payload: order });
+    dispatch({ type: ActionTypes.ADD_ORDER, payload: orders });
+};
+
+export const addOrderAction = async (dispatch,order) => {
+    // debugger;
+    // await pizza.post("/order", order);
+    // dispatch({ type: ActionTypes.ADD_ORDER, payload: order });
 };
 
 export const getOrdersDetailsAction = async dispatch => {
-    const response = await pizza.get("/order");
+    debugger;
+    const response = await GetOrders.get("/GetOrders");
+    debugger;
     dispatch({ type: ActionTypes.GET_ORDERS, payload: response.data });
 };
 
@@ -28,8 +46,17 @@ export const getOrdersDetailsAction = async dispatch => {
 
 export const insertItemToCartAction = (dispatch,item) =>
 {
-    debugger;
     dispatch({type:ActionTypes.INSERT_ITEM,payload: item})
+}
+
+export const insertDrinksToCartAction = (dispatch,item) =>
+{
+    dispatch({type:ActionTypes.INSERT_DRINK,payload: item})
+}
+
+export const insertPizzaToCartAction = (dispatch,item) =>
+{
+    dispatch({type:ActionTypes.INSERT_PIZZA,payload: item})
 }
 
 export const deliveryModalAction = (dispatch,deliveryModalStatus) =>
@@ -43,26 +70,35 @@ export const clearCartAction = (dispatch) =>
 }
 export const searchOrderNumberAndPhoneAction = (dispatch,inputToSend) =>
 {
+    debugger;
     dispatch({type:ActionTypes.SEARCH_PARAMETERS, payload: inputToSend});
 }
 
 export const setTotalPriceAction = (dispatch,totalprice) =>
 {
-    debugger;
     dispatch({type:ActionTypes.SET_FIRST_PRICE, totalPrice: totalprice});
 }
 
-export const removePizzaOrDrinkFromCartAction = (dispatch,item) =>
+
+export const removeDrinkFromCartAction = (dispatch,item) =>
 {
-    debugger;
-    dispatch({type:ActionTypes.REMOVE_FROM_CART,payload: item})
+    dispatch({type:ActionTypes.REMOVE_DRINK_FROM_CART,payload: item})
+}
+
+export const removePizzaFromCartAction = (dispatch,item) =>
+{
+    dispatch({type:ActionTypes.REMOVE_PIZZA_FROM_CART,payload: item})
 }
 
 
 export const addCurrentItemAction = (dispatch,item) =>
 {
-    debugger;
     dispatch({type:ActionTypes.ADD_CURRENT_ITEM,payload: item})
+}
+
+export const addIdNumberToOrder = (dispatch,idNumber) =>
+{
+    dispatch({type:ActionTypes.ADD_ORDER_ID_NUMBER,payload: idNumber})
 }
 
 

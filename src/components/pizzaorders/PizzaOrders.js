@@ -61,15 +61,13 @@ class PizzaOrdersComponent extends React.Component
 
      checkName = (item) =>
      {
-         debugger;
-
         if(item != null){
-           let fullname = (item.deliveryDetails.fullname).toLowerCase()
-           return(fullname); 
-        }else{
-             let fullname = (item.deliveryDetails.fullname);
-             return (fullname);
-        }
+            let fullname = (item.deliveryDetails.fullname).toLowerCase()
+            return(fullname); 
+         }else{
+              let fullname = (item.deliveryDetails.fullname);
+              return (fullname);
+         }
      }
 
      closeDeliveryDetailsModal= () =>
@@ -79,6 +77,7 @@ class PizzaOrdersComponent extends React.Component
 
      openDeliveryDetailsModal= (item) =>
      {
+         debugger;
         this.props.showDetailsModal((true));
         this.props.addCurrentItem(item);
      }
@@ -100,7 +99,7 @@ class PizzaOrdersComponent extends React.Component
                             <p className="detailsInformation">Street : {item.deliveryDetails.street}</p>
                             <p className="detailsInformation">Home Number : {item.deliveryDetails.homenumber}</p>
                             <p className="detailsInformation">Phone Number : {item.deliveryDetails.phonenumber}</p>
-                            <p className="detailsInformation">City : {item.deliveryDetails.city.myvalue}</p>
+                            <p className="detailsInformation">City : {item.deliveryDetails.locations.locationDescription}</p>
                             <p className="detailsInformation">Total Price : {item.totalPrice}</p>
                         </div>
                         <div className="col-lg-3">
@@ -113,26 +112,44 @@ class PizzaOrdersComponent extends React.Component
                     <p id="deliveryMessageOrder">Order Items:</p>
                     </Divider>
                     <Card.Group>
-                    {item.cartItems.map((item)=>
+                    {item.cartItems[0].DrinkArray&&item.cartItems[0].DrinkArray.map((item)=>
                     {
                         return(
                             <Card>
-                            <Card.Content>
-                                <Image
-                                floated='right'
-                                size='tiny'
-                                src={item.picture}
-                                />
-                                <Card.Header >Item</Card.Header>
-                                <Card.Description >
-                                <strong>Name:</strong> {item.name}
-                                <p><strong>Price:</strong> {item.price}</p>
-                                </Card.Description>
-                            </Card.Content>
-                        </Card>
+                                <Card.Content>
+                                    <Image
+                                    floated='right'
+                                    size='tiny'
+                                    src={item.drinkPicture}
+                                    />
+                                    <Card.Header >Item</Card.Header>
+                                    <Card.Description >
+                                    <strong>Name:</strong> {item.drinkName}
+                                    <p><strong>Price:</strong> {item.drinkPrice}</p>
+                                    </Card.Description>
+                                </Card.Content>
+                            </Card>
                         );
                     })}
-                    
+                    {item.cartItems[0].PizzaArray&&item.cartItems[0].PizzaArray.map((item)=>
+                    {
+                        return(
+                            <Card>
+                                <Card.Content>
+                                    <Image
+                                    floated='right'
+                                    size='tiny'
+                                    src={item.pizzaPicture}
+                                    />
+                                    <Card.Header >Item</Card.Header>
+                                    <Card.Description >
+                                    <strong>Name:</strong> {item.pizzaName}
+                                    <p><strong>Price:</strong> {item.pizzaPrice}</p>
+                                    </Card.Description>
+                                </Card.Content>
+                            </Card>
+                        );
+                    })}
 
                     </Card.Group>
                     
@@ -183,6 +200,7 @@ class PizzaOrdersComponent extends React.Component
                    
                     <Table.Body >
                         {Object.values(this.props.order).map((item,idx) =>{
+                            
                             let itemName = this.checkName(item);
                             let propSearch = this.props.search;
                             if(propSearch != null  ){
@@ -196,7 +214,7 @@ class PizzaOrdersComponent extends React.Component
                                 <Table.Cell>{item.deliveryDetails.fullname}</Table.Cell>
                                 <Table.Cell>{item.id}</Table.Cell>
                                 <Table.Cell>{item.deliveryDetails.phonenumber}</Table.Cell>
-                                <Table.Cell>{item.deliveryDetails.city.myvalue}</Table.Cell>
+                                <Table.Cell>{item.deliveryDetails.locations.locationDescription}</Table.Cell>
                                 <Table.Cell>{item.cartItems.length>0 && item.cartItems.map((secItem,index)=> {
                                     return(
                                         <p key={index}>{secItem.name}</p>);
@@ -219,7 +237,7 @@ class PizzaOrdersComponent extends React.Component
  const mapStateToProps = (state) => {
      
     return{
-        order: state.order.orderList,
+        order: state.order.orderList.Order,
         search: state.order.currentSearch,
         modal: state.modal.deliveryModalStatus,
         current: state.order.currentItem
