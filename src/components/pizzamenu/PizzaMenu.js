@@ -1,5 +1,7 @@
 import React from 'react';
-import {getMenuDetailsAction,insertItemToCartAction,deliveryModalAction,setTotalPriceAction,removePizzaOrDrinkFromCartAction} from '../../actions/Actions'
+import {getLocationsDetailsAction,getDrinksDetailsAction,getPizzaDetailsAction,
+    deliveryModalAction,setTotalPriceAction,
+    insertPizzaToCartAction,insertDrinksToCartAction,addIdNumberToOrder, removePizzaFromCartAction,removeDrinkFromCartAction} from '../../actions/Actions'
 import { connect } from 'react-redux';
 import {Table,Button,Image,Card,Feed} from 'semantic-ui-react';
 import drinkChoose from '../../pictures/aa.png';
@@ -17,7 +19,9 @@ class PizzaMenuComponent extends React.Component
      * Lifecycle method will activate the render() again in the end, is running and get details form the json server.
     */
     componentDidMount(){
-        this.props.getMenuDetails();
+        this.props.getLocationsDetails();
+        this.props.getDrinksDetails();
+        this.props.getPizzaDetails();
     }
 
     /**
@@ -32,6 +36,20 @@ class PizzaMenuComponent extends React.Component
         this.calculateTotalPrice(item);
     };
 
+    addPizzaToCart = (item) =>
+    {
+        debugger;
+         this.props.addPizzaToCart(item);
+        this.calculateTotalPrice(item);
+    };
+
+    addDrinkToCart = (item) =>
+    {
+        debugger;
+         this.props.addDrinkToCart(item);
+        this.calculateTotalPrice(item);
+    };
+
      /**
      * input: Get item with all details about the item.
      * output: Calculate the price from item.
@@ -40,10 +58,20 @@ class PizzaMenuComponent extends React.Component
     calculateTotalPrice = (item) =>
     {
         debugger;
-        var currentprice = item.price;
-        var totalPrice = this.props.totalPrice;
-        totalPrice=totalPrice+currentprice;
-        this.props.setTotalPrice(totalPrice);
+        if(item.drinkPrice>0 )
+        {
+            var currentprice = item.drinkPrice;
+            var totalPrice = this.props.totalPrice;
+            totalPrice=totalPrice+currentprice;
+            this.props.setTotalPrice(totalPrice);
+        }
+        else if(item.pizzaPrice>0)
+        {
+            var currentprice = item.pizzaPrice;
+            var totalPrice = this.props.totalPrice;
+            totalPrice=totalPrice+currentprice;
+            this.props.setTotalPrice(totalPrice);
+        }
     }
 
      /**
@@ -54,6 +82,8 @@ class PizzaMenuComponent extends React.Component
     openDeliveryDetailsModal= () =>
     {
         this.props.showDetailsModal((true));
+        let RandomNumber = Math.floor(Math.random() * 10000) + 1 ;
+        this.props.setOrderIdNumber(RandomNumber)
     }
 
 
@@ -62,15 +92,23 @@ class PizzaMenuComponent extends React.Component
      * output: Remove from state in cart the item that we sent to function, and update total price;
      * Function remove item from cart and update total price.
      */
-    removeItemFromCard = (item)=>
+    removeDrinkFromCard = (item)=>
     {
-        this.props.removePizzaOrDrinkFromCart(item);
-        var currentprice = item.price;
+        this.props.removeDrinkFromCart(item);
+        var currentprice = item.drinkPrice;
         var totalPrice = this.props.totalPrice;
         totalPrice=totalPrice-currentprice;
         this.props.setTotalPrice(totalPrice);
     }
     
+    removePizzaFromCard = (item)=>
+    {
+        this.props.removePizzaFromCart(item);
+        var currentprice = item.pizzaPrice;
+        var totalPrice = this.props.totalPrice;
+        totalPrice=totalPrice-currentprice;
+        this.props.setTotalPrice(totalPrice);
+    }
 
      /**
      * input: Empty.
@@ -102,19 +140,19 @@ class PizzaMenuComponent extends React.Component
                             </Table.Header>
                         </Table>
                             <Feed>
-                                {this.props.itemsInCart&&this.props.itemsInCart.map((item,idx)=>
+                                {this.props.pizzaItemsInCart&&this.props.pizzaItemsInCart.map((item,idx)=>
                                 {
                                     return(
                                         <Feed.Event key={idx}>
                                             <Feed.Content>
                                                 <Feed.Summary>
                                                     <Table>
-                                                        <Table.Body >
+                                                        <Table.Body>
                                                             <Table.Row key={idx}>
-                                                                <Table.Cell id='itemName'>{item.name}</Table.Cell>
-                                                                <Table.Cell><Image id="minPicture" src={item.picture}></Image></Table.Cell>
-                                                                <Table.Cell id='itemprice'>{item.price}</Table.Cell> 
-                                                                <Table.Cell id='rowPosition'><Button id='cartButton' onClick={()=>this.removeItemFromCard(item)}>Remove</Button></Table.Cell> 
+                                                                <Table.Cell id='itemName'>{item.pizzaName}</Table.Cell>
+                                                                <Table.Cell><Image id="minPicture" src={item.pizzaPicture}></Image></Table.Cell>
+                                                                <Table.Cell id='itemprice'>{item.pizzaPrice}</Table.Cell> 
+                                                                <Table.Cell id='rowPosition'><Button id='cartButton' onClick={()=>this.removePizzaFromCard(item)}>Remove</Button></Table.Cell> 
                                                             </Table.Row>
                                                         </Table.Body>
                                                     </Table>
@@ -122,6 +160,28 @@ class PizzaMenuComponent extends React.Component
                                             </Feed.Content>
                                         </Feed.Event>
                                     )
+                                    
+                                })},
+                                {this.props.drinkItemsInCart&&this.props.drinkItemsInCart.map((item,idx)=>
+                                {
+                                return(
+                                    <Feed.Event key={idx}>
+                                        <Feed.Content>
+                                            <Feed.Summary>
+                                                <Table>
+                                                    <Table.Body>
+                                                        <Table.Row key={idx}>
+                                                            <Table.Cell id='itemName'>{item.drinkName}</Table.Cell>
+                                                            <Table.Cell><Image id="minPicture" src={item.drinkPicture}></Image></Table.Cell>
+                                                            <Table.Cell id='itemprice'>{item.drinkPrice}</Table.Cell> 
+                                                            <Table.Cell id='rowPosition'><Button id='cartButton' onClick={()=>this.removeDrinkFromCard(item)}>Remove</Button></Table.Cell> 
+                                                        </Table.Row>
+                                                    </Table.Body>
+                                                </Table>
+                                            </Feed.Summary>
+                                        </Feed.Content>
+                                    </Feed.Event>
+                                )
                                 }
                                 )}
                             </Feed>
@@ -146,12 +206,12 @@ class PizzaMenuComponent extends React.Component
                 </Table.Header>
 
                 <Table.Body >
-                    {this.props.pizza.drinks && this.props.pizza.drinks.map((item,idx) => 
+                    {this.props.pizza.drinkArray && this.props.pizza.drinkArray.map((item,idx) => 
                     <Table.Row key={idx}>
-                        <Table.Cell>{item.name}</Table.Cell>
-                        <Table.Cell><Image size='tiny' src={item.picture}></Image></Table.Cell>
-                        <Table.Cell>{item.price}</Table.Cell> 
-                        <Table.Cell><Button id="addToCardDrinksButtons" onClick={()=>this.addPizzaOrDrinkToCart(item)}>Add To Cart</Button></Table.Cell> 
+                        <Table.Cell>{item.drinkName}</Table.Cell>
+                        <Table.Cell><Image size='tiny' src={item.drinkPicture}></Image></Table.Cell>
+                        <Table.Cell>{item.drinkPrice}</Table.Cell> 
+                        <Table.Cell><Button id="addToCardDrinksButtons" onClick={()=>this.addDrinkToCart(item)}>Add To Cart</Button></Table.Cell> 
                     </Table.Row>
                     )}
                 </Table.Body>
@@ -169,12 +229,12 @@ class PizzaMenuComponent extends React.Component
                 </Table.Header>
 
                 <Table.Body >
-                    {this.props.pizza.pizza && this.props.pizza.pizza.map((item,idx) => 
+                    {this.props.pizza.pizzaArray && this.props.pizza.pizzaArray.map((item,idx) => 
                     <Table.Row key={idx}>
-                        <Table.Cell>{item.name}</Table.Cell>
-                        <Table.Cell><Image size='tiny' src={item.picture}></Image></Table.Cell>
-                        <Table.Cell>{item.price}</Table.Cell> 
-                        <Table.Cell><Button id="addToCardPizzaButtons" onClick={()=>this.addPizzaOrDrinkToCart(item)}>Add To Cart</Button></Table.Cell> 
+                        <Table.Cell>{item.pizzaName}</Table.Cell>
+                        <Table.Cell><Image size='tiny' src={item.pizzaPicture}></Image></Table.Cell>
+                        <Table.Cell>{item.pizzaPrice}</Table.Cell> 
+                        <Table.Cell><Button id="addToCardPizzaButtons" onClick={()=>this.addPizzaToCart(item)}>Add To Cart</Button></Table.Cell> 
                     </Table.Row>
                     )}
                 </Table.Body>
@@ -192,6 +252,7 @@ class PizzaMenuComponent extends React.Component
      */
     render()
     {
+        
         return (
             <div>
                 {this.showMenu()}
@@ -211,7 +272,10 @@ export const mapStateToProps = (state) => {
     return { 
         pizza: state.pizza,
         totalPrice: state.cart.totalPrice,
-        itemsInCart: state.cart.items
+        itemsInCart: state.cart.items,
+        drinkItemsInCart : state.cart.DrinkArray,
+        pizzaItemsInCart : state.cart.PizzaArray
+
     };
 };
 
@@ -222,11 +286,20 @@ export const mapStateToProps = (state) => {
  */
 export const mapDispatchToProps = (dispatch) => {
     return{
-        getMenuDetails : () => getMenuDetailsAction(dispatch),
+        getLocationsDetails : () => getLocationsDetailsAction(dispatch),
+        getDrinksDetails : () => getDrinksDetailsAction(dispatch),
+        getPizzaDetails : () => getPizzaDetailsAction(dispatch),
         showDetailsModal : (modalStatus) =>  deliveryModalAction(dispatch,modalStatus),
-        addPizzaOrDrinkToCart: (item) => insertItemToCartAction(dispatch,item),
-        removePizzaOrDrinkFromCart: (item)=> removePizzaOrDrinkFromCartAction(dispatch,item),
+
+        addDrinkToCart : (item) => insertDrinksToCartAction(dispatch,item),
+        addPizzaToCart : (item) => insertPizzaToCartAction(dispatch,item),
+
+        removePizzaFromCart: (item)=> removePizzaFromCartAction(dispatch,item),
+        removeDrinkFromCart: (item)=> removeDrinkFromCartAction(dispatch,item),
+
         setTotalPrice: (totalprice) => setTotalPriceAction(dispatch,totalprice),
+        setOrderIdNumber : (idNumber) => addIdNumberToOrder(dispatch,idNumber)
+
     } 
 };
 

@@ -8,13 +8,14 @@ export default (state = initializeState, action) => {
     const  {payload} = action;
     switch (action.type) {
         case 'ADD_ORDER':
-            let arr =[...state.orderList];
-            arr.push(action.payload);
-            return {...state,orderList:arr};
+            debugger;
+            let index = Object.keys(state.orderList).length; // take the next index of input
+            let helper = {[index]: payload[0]}; // create new object in the next key index
+            let orderListNew = {...state.orderList, ...helper}
+            return {...state,orderList:orderListNew};
         case 'GET_ORDERS':  
             debugger;
             return { ...state,orderList:action.payload};
-
         case 'SEARCH_PARAMETERS':
             debugger;
             return {...state, currentSearch: payload }

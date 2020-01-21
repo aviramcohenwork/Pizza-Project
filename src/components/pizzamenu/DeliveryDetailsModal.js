@@ -1,12 +1,13 @@
 import React from 'react'
 import { Image, Modal} from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import {deliveryModalAction,addOrderAction,clearCartAction} from '../../actions/Actions'
+import {deliveryModalAction,addOrderAction,clearCartAction,sentOrderAction,addIdNumberToOrder} from '../../actions/Actions'
 import { Field,reduxForm, reset,Form } from 'redux-form'
 import { Button } from 'react-bootstrap';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-widgets/dist/css/react-widgets.css'
 import '../../css/PizzaMenuModal.css'
+import { render } from 'react-dom';
 
 
 class DeliveryDetailsModal extends React.Component
@@ -63,18 +64,34 @@ class DeliveryDetailsModal extends React.Component
     mySubmit=(deliveryDetails,dispatch)=>
     {
         debugger;
-        const order = {deliveryDetails:deliveryDetails, cartItems:this.props.cart,totalPrice:this.props.totalPrice};
-        this.props.sentOrder(order);
+
+        debugger;
+        let cartItemsNew = [];
+        let Items = {PizzaArray:this.props.pizzaCart,DrinkArray:this.props.drinkCart};
+        cartItemsNew[0]=Items;
+        const order = {deliveryDetails:deliveryDetails,cartItems:cartItemsNew,totalPrice:this.props.totalPrice,id:this.props.idNumber};
+        var orders =[order];
+        this.props.sentOrder(orders);
         dispatch(reset("DeliveryDetailsModalForm"));
         this.props.clearCart();
         alert("Order Compleate!");
         this.closeDeliveryDetailsModal();
-        
     }
 
 
     render()
     {
+        
+        // console.log(this.props.city);
+        if (!this.props.locations){
+            console.log("Loading cities");
+            return (
+                <div>LOADING..........</div>
+            );
+        }
+        const cities = Object.values(this.props.locations);
+        console.log(cities);
+        debugger;
         return (
             <Modal id="modalSize" open={this.props.modal.deliveryModalStatus} onClose={this.closeDeliveryDetailsModal} closeIcon>
             <Modal.Header id="modalHeader"><div id="deliveryMessage">Delivery Details:</div>
@@ -111,11 +128,11 @@ class DeliveryDetailsModal extends React.Component
                             />
                             <Field
                                 className="fieldsCity field"
-                                name="city"
+                                name="locations"
                                 component={this.renderDropdownList}
-                                data={this.props.city}
-                                valueField="value"
-                                textField="text"
+                                data={cities}
+                                valueField="locationDescription"
+                                textField="locationValueName"
                                 placeholder='Choose City'
                                 dropUp={true}
                             />
@@ -139,9 +156,11 @@ class DeliveryDetailsModal extends React.Component
 export const mapStateToProps = (state) => {
     return { 
         modal: state.modal,
-        city: state.pizza.city,
-        cart: state.cart.items,
+        locations: state.pizza.locations,
+        pizzaCart: state.cart.PizzaArray,
+        drinkCart: state.cart.DrinkArray,
         totalPrice: state.cart.totalPrice,
+        idNumber: state.cart.id
     };
 };
 
@@ -153,7 +172,7 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
     return{
         closeDetailsModal : (modalStatus) =>  deliveryModalAction(dispatch,modalStatus),
-        sentOrder : (order) => addOrderAction(dispatch,order),
+        sentOrder : (orders) => sentOrderAction(dispatch,orders),
         clearCart : () => clearCartAction(dispatch),
     } 
 };
