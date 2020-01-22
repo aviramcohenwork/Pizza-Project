@@ -101,6 +101,7 @@ class PizzaOrdersComponent extends React.Component
                             <p className="detailsInformation">Phone Number : {item.deliveryDetails.phonenumber}</p>
                             <p className="detailsInformation">City : {item.deliveryDetails.locations.locationDescription}</p>
                             <p className="detailsInformation">Total Price : {item.totalPrice}</p>
+                            <p className="detailsInformation">Order Status : {item.orderStatus}</p>
                         </div>
                         <div className="col-lg-3">
                             <Image src="https://www.fasteat.xyz/upload/1559006953-best-italian-pizza-icon-sticker-1542410429.1995544.png"></Image>
@@ -215,12 +216,21 @@ class PizzaOrdersComponent extends React.Component
                                 <Table.Cell>{item.id}</Table.Cell>
                                 <Table.Cell>{item.deliveryDetails.phonenumber}</Table.Cell>
                                 <Table.Cell>{item.deliveryDetails.locations.locationDescription}</Table.Cell>
-                                <Table.Cell>{item.cartItems.length>0 && item.cartItems.map((secItem,index)=> {
+                                <Table.Cell>{item.cartItems[0].DrinkArray && item.cartItems[0].DrinkArray.map((drinkItem,index)=> 
+                                {
                                     return(
-                                        <p key={index}>{secItem.name}</p>);
+                                        <p key={index}>{drinkItem.drinkName}</p>
+                                    );
+                                }
+                                )}
+                                {item.cartItems[0].PizzaArray && item.cartItems[0].PizzaArray.map((pizzaItem,index)=> 
+                                {
+                                    return(
+                                        <p key={index}>{pizzaItem.pizzaName}</p>
+                                    );
                                 }
                                 )}</Table.Cell>
-                                <Table.Cell>Deliverd</Table.Cell>
+                                <Table.Cell>{item.orderStatus}</Table.Cell>
                                 <Table.Cell>{item.totalPrice}</Table.Cell>
                                 <Table.Cell><Button id="detailsButtons" onClick={()=>this.openDeliveryDetailsModal(item)}>Details</Button></Table.Cell>
                                 {this.props.current&&this.detailsModalDisplay(this.props.current)}
