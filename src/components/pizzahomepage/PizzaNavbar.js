@@ -25,8 +25,8 @@ const PizzaNavBar = () =>
                     <Button className="buttoninlink">Orders</Button>
                 </Link>
 
-                <Link to="/ContectUs" className="linkbuttonstag">
-                    <Button className="buttoninlink">Connect Us</Button>
+                <Link to="/PizzeriaInformation" className="linkbuttonstag">
+                    <Button className="buttoninlink">Pizzeria Information</Button>
                 </Link>
 
             </div>
