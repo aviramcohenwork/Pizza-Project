@@ -1,13 +1,12 @@
 import React from 'react'
 import { Image, Modal} from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import {deliveryModalAction,addOrderAction,clearCartAction,sentOrderAction,addIdNumberToOrder} from '../../actions/Actions'
+import {deliveryModalAction,clearCartAction,sentOrderAction} from '../../actions/Actions'
 import { Field,reduxForm, reset,Form } from 'redux-form'
 import { Button } from 'react-bootstrap';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-widgets/dist/css/react-widgets.css'
 import '../../css/PizzaMenuModal.css'
-import { render } from 'react-dom';
 
 
 class DeliveryDetailsModal extends React.Component
