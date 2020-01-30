@@ -1,5 +1,6 @@
 import React from 'react';
-import Pdf from '../../pictures/BackEndMicroServiceDiagram.pdf'
+import Backend from '../../pictures/BackEndMicroServiceDiagram.pdf'
+import PdfFrontend from '../../pictures/FrontEndDiagram.pdf'
 
 class PizzeriaInformationComponent extends React.Component
 {
@@ -7,7 +8,8 @@ class PizzeriaInformationComponent extends React.Component
     {
         return(
             <div>
-            <object width="100%" height="800" data={Pdf} type="application/pdf"></object>
+            <object width="100%" height="800" data={Backend} type="application/pdf"></object>
+            <object width="100%" height="800" data={PdfFrontend} type="application/pdf"></object>
             </div>
         )
     }

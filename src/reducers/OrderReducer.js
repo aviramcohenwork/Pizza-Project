@@ -21,6 +21,7 @@ export default (state = initializeState, action) => {
             return {...state, currentSearch: payload }
         case 'ADD_CURRENT_ITEM':
             return{...state,currentItem:payload}
+
         default:
             return state;
     }

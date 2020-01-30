@@ -1,13 +1,13 @@
 import React from 'react'
 import { Image, Modal} from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import {deliveryModalAction,clearCartAction,sentOrderAction} from '../../actions/Actions'
-import { Field,reduxForm, reset,Form } from 'redux-form'
+import {deliveryModalAction,clearCartAction,sentOrderAction,getOrderToDelivery,activateDeliveryModalInformationAuction,setOrderStatusAction} from '../../actions/Actions'
+import { Field,reduxForm, reset,Form, } from 'redux-form'
 import { Button } from 'react-bootstrap';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import 'react-widgets/dist/css/react-widgets.css'
 import '../../css/PizzaMenuModal.css'
-
+import DeliveryInformationModal from '../pizzamenu/DeliveryInformationModal'
 
 class DeliveryDetailsModal extends React.Component
 {
@@ -62,26 +62,33 @@ class DeliveryDetailsModal extends React.Component
      */
     mySubmit=(deliveryDetails,dispatch)=>
     {
-        debugger;
 
-        debugger;
         let cartItemsNew = [];
         let Items = {PizzaArray:this.props.pizzaCart,DrinkArray:this.props.drinkCart};
         cartItemsNew[0]=Items;
-        const order = {deliveryDetails:deliveryDetails,cartItems:cartItemsNew,totalPrice:this.props.totalPrice,id:this.props.idNumber};
+        const order = {deliveryDetails:deliveryDetails,cartItems:cartItemsNew,totalPrice:this.props.totalPrice,id:this.props.idNumber,orderStatus:this.props.orderStatusInfo};
         var orders =[order];
+        debugger;
         this.props.sentOrder(orders);
         dispatch(reset("DeliveryDetailsModalForm"));
         this.props.clearCart();
         alert("Order Compleate!");
         this.closeDeliveryDetailsModal();
+        this.props.getInfo(this.props.idNumber);
+        setTimeout(function () {
+            this.props.changeDeliveryInformationModelStatus(true);
+        }.bind(this),5000);
+        
     }
 
+    setOrderStatus = () =>
+    {
+        let orderStatus =" The pizza delivered to shipping department";
+        this.props.setOrderStatus(orderStatus);
+    }
 
     render()
     {
-        
-        // console.log(this.props.city);
         if (!this.props.locations){
             console.log("Loading cities");
             return (
@@ -89,15 +96,14 @@ class DeliveryDetailsModal extends React.Component
             );
         }
         const cities = Object.values(this.props.locations);
-        console.log(cities);
-        debugger;
         return (
+        <div>
             <Modal id="modalSize" open={this.props.modal.deliveryModalStatus} onClose={this.closeDeliveryDetailsModal} closeIcon>
             <Modal.Header id="modalHeader"><div id="deliveryMessage">Delivery Details:</div>
             <Button id="exitButtonModal" onClick={this.closeDeliveryDetailsModal} type='button'>Press To Exit</Button>
             </Modal.Header>
             <Modal.Content id="modalContent">
-              <Image  src='https://lavu.com/wp-content/uploads/2019/06/Pizza-Delivery-850.jpg' />
+              <Image src='https://lavu.com/wp-content/uploads/2019/06/Pizza-Delivery-850.jpg' />
               <Modal.Description>
                     <div>
                         <Form className='ui form' onSubmit={this.props.handleSubmit(this.mySubmit)} >
@@ -141,7 +147,9 @@ class DeliveryDetailsModal extends React.Component
               </Modal.Description>
             </Modal.Content>
           </Modal>
-            
+        <DeliveryInformationModal></DeliveryInformationModal>
+        {this.setOrderStatus()}
+        </div>
         )
     }
 
@@ -159,7 +167,8 @@ export const mapStateToProps = (state) => {
         pizzaCart: state.cart.PizzaArray,
         drinkCart: state.cart.DrinkArray,
         totalPrice: state.cart.totalPrice,
-        idNumber: state.cart.id
+        idNumber: state.cart.id,
+        orderStatusInfo: state.cart.orderStatus
     };
 };
 
@@ -173,6 +182,9 @@ export const mapDispatchToProps = (dispatch) => {
         closeDetailsModal : (modalStatus) =>  deliveryModalAction(dispatch,modalStatus),
         sentOrder : (orders) => sentOrderAction(dispatch,orders),
         clearCart : () => clearCartAction(dispatch),
+        getInfo : (ortderIdNumber) => getOrderToDelivery(dispatch,ortderIdNumber),
+        changeDeliveryInformationModelStatus : (deliveryModalInformationStatus) => activateDeliveryModalInformationAuction(dispatch,deliveryModalInformationStatus),
+        setOrderStatus : (orderStatus) => setOrderStatusAction(dispatch,orderStatus)
     } 
 };
 

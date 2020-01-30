@@ -77,7 +77,7 @@ class PizzaOrdersComponent extends React.Component
 
      openDeliveryDetailsModal= (item) =>
      {
-         debugger;
+        debugger;
         this.props.showDetailsModal((true));
         this.props.addCurrentItem(item);
      }
