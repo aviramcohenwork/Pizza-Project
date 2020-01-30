@@ -4,6 +4,12 @@
     margin-left:20%;
     margin-top:5%;
 }
+#DeliveryInformationModal
+{
+    height: 64%;
+    margin-left:25%;
+    margin-top:5%;
+}
 
 #exitButtonModal{
     margin-top:-50px;

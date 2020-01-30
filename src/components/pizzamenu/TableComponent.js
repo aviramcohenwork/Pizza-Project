@@ -23,7 +23,7 @@ const TableComponent = (props)=>
 
     return(
         <div>           
-        <Table id="tableDrinkPizaaSize" >
+        <Table id="tableDrinkPizaaSize" unstackable >
             <Table.Header >
                 <Table.Row>  
                     <Table.HeaderCell>{props.option.headerName}</Table.HeaderCell>

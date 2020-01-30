@@ -1,6 +1,6 @@
 import React from 'react';
 import {getLocationsDetailsAction,getDrinksDetailsAction,getPizzaDetailsAction,
-    deliveryModalAction,setTotalPriceAction,addIdNumberToOrder} from '../../actions/Actions'
+    deliveryModalAction,setTotalPriceAction,addIdNumberToOrder,getCouponsDetailsAction} from '../../actions/Actions'
 import { connect } from 'react-redux';
 import {Image} from 'semantic-ui-react';
 import pizzaChoose from '../../pictures/bb.png';
@@ -10,7 +10,7 @@ import '../../css/PizzaMenu.css'
 import CartComponent from './CartComponent';
 import TableComponent from './TableComponent';
 import drinkChoose from '../../pictures/aa.png';
-
+import PromotionsComponent from "../pizzamenu/PromotionsComponent"
 
 class PizzaMenuComponent extends React.Component
 {
@@ -24,6 +24,7 @@ class PizzaMenuComponent extends React.Component
         this.props.getLocationsDetails();
         this.props.getDrinksDetails();
         this.props.getPizzaDetails();
+        this.props.getCopuns();
     }
 
 
@@ -82,20 +83,29 @@ class PizzaMenuComponent extends React.Component
             item: "drink"
         };
         return (
-            <div>
-                <CartComponent openDeliveryDetailsModal={this.openDeliveryDetailsModal}  />
+            <div className='ui grid'>
+                <div className='row ui doubling stackable'> 
+                    <div className="eleven wide column">
+                        <Image className="topBottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
+                        
+                        <Image className="chooseDrinkPizzaButtons" src={drinkChoose}></Image>  
 
-                <Image className="chooseDrinkPizzaButtons" src={drinkChoose}></Image>  
+                        <TableComponent calculateTotalPrice={this.calculateTotalPrice} option={drinkOption}/>
 
-                <TableComponent calculateTotalPrice={this.calculateTotalPrice} option={drinkOption}/>
+                        <Image className="chooseDrinkPizzaButtons" src={pizzaChoose} ></Image>
 
-                <Image className="chooseDrinkPizzaButtons" src={pizzaChoose} ></Image>
+                        <TableComponent calculateTotalPrice={this.calculateTotalPrice} option={pizzaOption}/>
 
-                <TableComponent calculateTotalPrice={this.calculateTotalPrice} option={pizzaOption}/>
-        
-                <Image id="BottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
+                        <Image id="BottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
 
-                <DeliveryDetailsModal/>
+                        <DeliveryDetailsModal/>
+                    </div>
+                
+                    <div className="five wide column">
+                        <CartComponent openDeliveryDetailsModal={this.openDeliveryDetailsModal}  />
+                        {/* <PromotionsComponent/> */}
+                    </div>
+                </div>
             </div>
         );
         
@@ -144,7 +154,8 @@ export const mapDispatchToProps = (dispatch) => {
         getPizzaDetails : () => getPizzaDetailsAction(dispatch),
         showDetailsModal : (modalStatus) =>  deliveryModalAction(dispatch,modalStatus),
         setTotalPrice: (totalprice) => setTotalPriceAction(dispatch,totalprice),
-        setOrderIdNumber : (idNumber) => addIdNumberToOrder(dispatch,idNumber)
+        setOrderIdNumber : (idNumber) => addIdNumberToOrder(dispatch,idNumber),
+        getCopuns : () => getCouponsDetailsAction(dispatch)
 
     } 
 };

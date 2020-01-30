@@ -5,7 +5,7 @@ import PizzaMenu from './components/pizzamenu/PizzaMenu';
 import PizzeriaInformation from './components/PizzeriaInformation/PizzeriaInformation';
 import PizzaOrders from './components/pizzaorders/PizzaOrders';
 import PageNotFound from './components/pizzapagenotfound/PizzaPageNotFound';
-import PizzaNavBar from './components/pizzahomepage/PizzaNavbar'
+import PizzaNavBar from './components/pizzahomepage/PizzaNavbar';
 class App extends React.Component
 {
   render()
