@@ -1,6 +1,6 @@
 .topBottomImage{
     margin-top: 0.8%;
-    width: 96%;
+    width: 100%;
     height: 350px;
     margin-left: 5%;
 }
@@ -8,7 +8,7 @@
 #BottomImage
 {
     margin-top: 0.8%;
-    width: 70%;
+    width: 100%;
     height: 350px;
     margin-left: 5%;  
 }
@@ -28,10 +28,19 @@
 }
 
 #tableDrinkPizaaSize{
-    width: 70%;
+    width: 100%;
     margin-left: 5%;
 }
 
+#promoPic{
+    width: auto;
+    margin-bottom: 5%;
+    background-color: transparent;
+}
+#promoButtonImage
+{
+    background-color: white;
+}
 #tableButtonsSize{
     width: 17%;
 }
@@ -44,10 +53,19 @@
 }
 
 #startDivider{
-     margin-top: 1%;
-    width: 22%; 
-    position: fixed;
+    top: 11.2vh;
+    margin: auto;
+    width: 70%; 
+    position: sticky;
 }
+
+#startDividerPromotions{
+    top: 11.2vh;
+    margin: 10% auto auto auto;
+    width: 100%; 
+    position: sticky;   
+}
+
 
 #cartImage{
     margin-top: 2%;
@@ -56,9 +74,10 @@
 #orderButtonCart
 {
     width: 100%;
-    height:15%;
+    height:50px;
     background-color: #dc3545;
     color: white;
+    margin-top: 2%;
 }
 
 #totalpricetext
@@ -91,3 +110,15 @@ width: 16%;
 height: 50px;
 }
 
+.ui.input>input:focus
+{
+ border-color: #dc3545 !important;
+}   
+
+.ui.inverted.segment, .ui.primary.inverted.segment{
+    background: #dc3545 !important;
+}
+
+.textBoxPromotion{
+    width: 100%;
+}

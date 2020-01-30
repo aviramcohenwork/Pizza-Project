@@ -9,6 +9,11 @@ export const Location = axios.create({
     baseURL: "http://localhost:8080"
 });
 
+export const Coupuns =  axios.create({
+    baseURL: "http://localhost:8080"
+});
+
+
 export const PizzaAndDrinks = axios.create({
     baseURL: "http://localhost:8081"
 });
@@ -20,6 +25,10 @@ export const SaveOrder = axios.create({
 export const GetOrders = axios.create({
     baseURL: "http://localhost:8082"
 });
+
+export const DeliveryDepartment = axios.create({
+    baseURL: "http://localhost:8083"
+})
 
 
 
