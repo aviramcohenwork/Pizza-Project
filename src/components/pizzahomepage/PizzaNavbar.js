@@ -9,10 +9,13 @@ const PizzaNavBar = () =>
     return(
              
         <div className = "row mycolornav">
+
             <div className="col-lg-1 ">
+
                 <Navbar.Brand href="/">
                     <Image height='80px' src="https://www.fasteat.xyz/upload/1559006953-best-italian-pizza-icon-sticker-1542410429.1995544.png"></Image>
                 </Navbar.Brand>
+                
             </div>
 
             <div className="col-lg-7 buttoninlink ">

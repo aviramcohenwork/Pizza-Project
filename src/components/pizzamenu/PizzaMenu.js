@@ -1,6 +1,6 @@
 import React from 'react';
 import {getLocationsDetailsAction,getDrinksDetailsAction,getPizzaDetailsAction,
-    deliveryModalAction,setTotalPriceAction,addIdNumberToOrder,getCouponsDetailsAction} from '../../actions/Actions'
+deliveryModalAction,setTotalPriceAction,addIdNumberToOrder,getCouponsDetailsAction} from '../../actions/Actions'
 import { connect } from 'react-redux';
 import {Image} from 'semantic-ui-react';
 import pizzaChoose from '../../pictures/bb.png';
@@ -10,16 +10,12 @@ import '../../css/PizzaMenu.css'
 import CartComponent from './CartComponent';
 import TableComponent from './TableComponent';
 import drinkChoose from '../../pictures/aa.png';
-import PromotionsComponent from "../pizzamenu/PromotionsComponent"
 
 class PizzaMenuComponent extends React.Component
 {
-
-    /** 
-     * input: Empty.
-     * output: Activate the render() again in the end.
-     * Lifecycle method will activate the render() again in the end, is running and get details form the json server.
-    */
+   /**
+    *@desc Lifecycle method will activate the render() again in the end, is running and get details form the json server
+   */
     componentDidMount(){
         this.props.getLocationsDetails();
         this.props.getDrinksDetails();
@@ -27,16 +23,13 @@ class PizzaMenuComponent extends React.Component
         this.props.getCopuns();
     }
 
-
-     /**
-     * input: Get item with all details about the item.
-     * output: Calculate the price from item.
-     * Function Get a item and calcualte the price in item and calculate the total price of all items.
+    /**
+     * @desc Get a item and enter the itme to total price.
+     * @param {Object} item Contain the item details.
      */
     calculateTotalPrice = (item) =>
     {
-        debugger;
-        if(item.drinkPrice>0 )
+        if(item.drinkPrice>0)
         {
             let currentprice = item.drinkPrice;
             let totalPrice = this.props.totalPrice;
@@ -52,23 +45,22 @@ class PizzaMenuComponent extends React.Component
         }
     }
 
-     /**
-     * input: Empty
-     * output: Change value from false to true
-     * Function that change value deliveryModalStatus in state from false to true and open the order modal.
+
+    /**
+     * @des This function is using to change delivery modal value and open the modal when this function is calling.
+     * Add a new random number to the current order.
      */
     openDeliveryDetailsModal= () =>
     {
         this.props.showDetailsModal((true));
-        let RandomNumber = Math.floor(Math.random() * 10000) + 1 ;
+        let RandomNumber = Math.floor(Math.random() * 1000000) + 1 ;
         this.props.setOrderIdNumber(RandomNumber)
     }
 
-     /**
-     * input: Empty.
-     * output: Dummy function to return all information in div.
-     * Function display all logic in the menu.
-     */
+    /**
+     * @desc This function is using to run the menu logic flow.
+     * @return HTML view. 
+    */
     showMenu = () =>
     {
         const pizzaOption = {
@@ -82,41 +74,40 @@ class PizzaMenuComponent extends React.Component
             headerPrice: "Drink Price",
             item: "drink"
         };
+        
         return (
             <div className='ui grid'>
+
                 <div className='row ui doubling stackable'> 
+
                     <div className="eleven wide column">
-                        <Image className="topBottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
+
+                        <Image className="topBottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"/>
                         
-                        <Image className="chooseDrinkPizzaButtons" src={drinkChoose}></Image>  
+                        <Image className="chooseDrinkPizzaButtons" src={drinkChoose}/>
 
                         <TableComponent calculateTotalPrice={this.calculateTotalPrice} option={drinkOption}/>
 
-                        <Image className="chooseDrinkPizzaButtons" src={pizzaChoose} ></Image>
+                        <Image className="chooseDrinkPizzaButtons" src={pizzaChoose}/>
 
                         <TableComponent calculateTotalPrice={this.calculateTotalPrice} option={pizzaOption}/>
 
-                        <Image id="BottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"></Image>
+                        <Image id="BottomImage" src="https://static.beyondmenu.com/UploadFiles/21939/SlideShow/20120303040901.jpg"/>
 
                         <DeliveryDetailsModal/>
+
                     </div>
                 
                     <div className="five wide column">
-                        <CartComponent openDeliveryDetailsModal={this.openDeliveryDetailsModal}  />
-                        {/* <PromotionsComponent/> */}
+                        <CartComponent openDeliveryDetailsModal={this.openDeliveryDetailsModal}/>
                     </div>
+
                 </div>
+
             </div>
         );
-        
     }
 
-    
-     /**
-     * input: Empty.
-     * output: return all the logic.
-     * Function activate the menu page.
-     */
     render()
     {
         
@@ -129,12 +120,10 @@ class PizzaMenuComponent extends React.Component
     }
 }
 
-
 /**
- * input: state
- * output: listener.
- * Function listener to all the current fields and if we got change we run the render function again. 
- */
+ * @desc Function listener to all the current fields and if we got change we run the render function again.
+ * @param state Contain all the state information.
+*/
 export const mapStateToProps = (state) => {
     return { 
         pizza: state.pizza,
@@ -142,11 +131,11 @@ export const mapStateToProps = (state) => {
     };
 };
 
+
 /**
- * input: dispatch
- * output: Actions.
- * Function to active a action and sent them to the reudcer and save information in DB. 
- */
+  * @desc Function to active a action and sent them to the reudcer.
+  * @param {ActionType} dispatch Delivery the dispatch to the functions.
+*/
 export const mapDispatchToProps = (dispatch) => {
     return{
         getLocationsDetails : () => getLocationsDetailsAction(dispatch),
@@ -156,7 +145,6 @@ export const mapDispatchToProps = (dispatch) => {
         setTotalPrice: (totalprice) => setTotalPriceAction(dispatch,totalprice),
         setOrderIdNumber : (idNumber) => addIdNumberToOrder(dispatch,idNumber),
         getCopuns : () => getCouponsDetailsAction(dispatch)
-
     } 
 };
 
