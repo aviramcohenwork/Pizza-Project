@@ -61,7 +61,7 @@ class PizzaOrdersComponent extends React.Component
 
      checkName = (item) =>
      {
-        if(item != null){
+        if(item.deliveryDetails.fullname != null){
             let fullname = (item.deliveryDetails.fullname).toLowerCase()
             return(fullname); 
          }else{
@@ -165,6 +165,7 @@ class PizzaOrdersComponent extends React.Component
          console.log("pizza method")
      }
     
+    
     render()
     {
         debugger;
@@ -208,15 +209,16 @@ class PizzaOrdersComponent extends React.Component
                                 propSearch  = this.props.search.toLowerCase();
                             }
                             if(propSearch!=null){
-                            if(itemName.startsWith(propSearch) || item.deliveryDetails.phonenumber.startsWith(this.props.search))
+
+                            if(itemName&&itemName.startsWith(propSearch) || item.deliveryDetails.phonenumber&&item.deliveryDetails.phonenumber.startsWith(this.props.search))
                             {   
                                 return(
                                 <Table.Row key={idx}>
-                                <Table.Cell>{item.deliveryDetails.fullname}</Table.Cell>
-                                <Table.Cell>{item.id}</Table.Cell>
-                                <Table.Cell>{item.deliveryDetails.phonenumber}</Table.Cell>
-                                <Table.Cell>{item.deliveryDetails.locations.locationDescription}</Table.Cell>
-                                <Table.Cell>{item.cartItems[0].DrinkArray && item.cartItems[0].DrinkArray.map((drinkItem,index)=> 
+                                <Table.Cell>{item.deliveryDetails.fullname&&item.deliveryDetails.fullname}</Table.Cell>
+                                <Table.Cell>{item.id&&item.id}</Table.Cell>
+                                <Table.Cell>{item.deliveryDetails.phonenumber&&item.deliveryDetails.phonenumber}</Table.Cell>
+                                <Table.Cell>{item.deliveryDetails.locations && item.deliveryDetails.locations.locationDescription}</Table.Cell>
+                                <Table.Cell>{item.cartItems&&item.cartItems[0].DrinkArray && item.cartItems[0].DrinkArray.map((drinkItem,index)=> 
                                 {
                                     return(
                                         <p key={index}>{drinkItem.drinkName}</p>

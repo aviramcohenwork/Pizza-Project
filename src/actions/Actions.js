@@ -41,7 +41,7 @@ export const getPizzaDetailsAction = async dispatch => {
 };
 
 /**
- * @desc Call to SaveOrder rest from menu order service and post the order to mlab data base.
+ * @desc Call to SaveOrder rest from order micro service and post the order to mlab data base.
  * @Return {Objcet} Json object contain the response.
 */
 export const sentOrderAction = async (dispatch,orders) => {
@@ -50,23 +50,28 @@ export const sentOrderAction = async (dispatch,orders) => {
     dispatch({ type: ActionTypes.ADD_ORDER, payload: orders });
 };
 
+/**
+ * @desc Call to GetOrders rest from order micro service and get the orders from mlab data base.
+ * @Return {Objcet} Json object contain the response.
+*/
 export const getOrdersDetailsAction = async dispatch => {
     const response = await GetOrders.get("/Order/GetOrders");
     dispatch({ type: ActionTypes.GET_ORDERS, payload: response.data });
 };
 
+/**
+ * @desc Call to GetOrder/{orderIdNumber} rest from micro service sent the order number and get reponse from data base
+ * @Return {Objcet} Json object contain the response.
+*/
 export const getOrderToDelivery = async (dispatch,orderIdNumber)=> {
-    debugger;
     const response = await DeliveryDepartment.get("/Order/GetOrder/" + orderIdNumber);
-    debugger;
 
 };
-
 
 //=====================================================================================
 
 
-//Action to set/get data from store store
+//Action to set/get data from store 
 
 export const insertItemToCartAction = (dispatch,item) =>
 {

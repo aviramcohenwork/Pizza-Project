@@ -1,6 +1,6 @@
 #modalSize{
    
-    height: 64%;
+    height: 74%;
     margin-left:20%;
     margin-top:5%;
 }
@@ -38,8 +38,9 @@
 
 #modalContent .fieldsFullName{
 
-    margin-top:2%;
-    margin-right:2%;
+    margin-top:5%;
+    margin-right:7%;
+    margin-bottom: 5%;
     width:200px;
     display: inline-block;
 }
@@ -47,6 +48,7 @@
 #modalContent .fieldsStreet{
 
     margin-top:2%;
+    margin-right:5%;
     width:200px;
     display: inline-block;
 }
@@ -64,7 +66,7 @@
 #modalContent .fieldsPhoneNumber{
 
     margin-top:1%;
-    margin-right:2%;
+    margin-right:7%;
     width:200px;
     display: inline-block;
 }
@@ -79,7 +81,7 @@
 
 #modalContent #orderButton{
     margin-bottom:2%;
-    margin-left:2%;
+    margin-left:7%;
     width:200px;
     height: 35px;
     background: black;
@@ -88,6 +90,6 @@
     vertical-align: -12px;
 }
 
-
-
-
+.error {
+    background-color: lawngreen;
+}

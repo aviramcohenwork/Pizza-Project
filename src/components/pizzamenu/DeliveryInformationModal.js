@@ -3,10 +3,12 @@ import {reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import {Table,Button,Image,Card,Modal,Header} from 'semantic-ui-react';
 import {activateDeliveryModalInformationAuction} from '../../actions/Actions'
-import '../../css/PizzaMenuModal.css'
+import '../../css/PizzaMenuModal.css';
+import PizzaDeliveryProgress from '../../pictures/Pizza Delivery Progress.png'
 
 const DeliveryInformationModal = (props) =>
 {
+
     const closeDeliveryInformationModal= () =>
     {
         props.changeDeliveryInformationModelStatus(false);
@@ -14,14 +16,13 @@ const DeliveryInformationModal = (props) =>
     return(
         <div>
             <Modal id='DeliveryInformationModal' open={props.modalStatus&&props.modalStatus} onClose={closeDeliveryInformationModal} closeIcon>
-                <Modal.Header>Select a Photo</Modal.Header>
+                <Modal.Header><Image src={PizzaDeliveryProgress}/></Modal.Header>
                 <Modal.Content image>
                 <Image wrapped size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' />
                 <Modal.Description>
                     <Header>Default Profile Image</Header>
                     <p>
-                    We've found the following gravatar image associated with your e-mail
-                    address.
+                        {props.orderStatusInfo}
                     </p>
                     <p>Is it okay to use this photo?</p>
                 </Modal.Description>
@@ -35,6 +36,7 @@ const DeliveryInformationModal = (props) =>
 export const mapStateToProps = (state) => {
     return { 
         modalStatus: state.modal.deliveryInformationModalStatus,
+        orderStatusInfo: state.cart.orderStatus 
     };
 };
 
