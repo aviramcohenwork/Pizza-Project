@@ -1,7 +1,12 @@
 const initializeState = {
     DrinkArray: [],
     PizzaArray: [],
+    newOrderStatus: null,
     totalPrice: 0,
+    orderCreationComplete: false,
+    changeStatusForFirst: true,
+    changeStatusForSecond:false,
+    finishOrderCheck:false
 }
 export default (state = initializeState, action) => {
     switch (action.type) {
@@ -42,6 +47,20 @@ export default (state = initializeState, action) => {
             debugger;
             return{...state,orderStatus:action.payload}
 
+        case 'GET_ORDER_STATUS_FROM_MS':
+            return{...state,newOrderStatus:action.payload}
+
+        case 'SET_COMPLETE_ORDER':
+            return{...state,orderCreationComplete:action.payload}
+
+        case 'CHANGE_STATUS_FOR_FIRST':
+            return{...state,changeStatusForFirst:action.payload}
+
+        case 'CHANGE_STATUS_FOR_SECOND':
+            return{...state,changeStatusForSecond:action.payload}
+        
+        case 'CHANGE_TO_FINISH':
+            return{...state,finishOrderCheck:action.payload}
         default:
             return state;
     }

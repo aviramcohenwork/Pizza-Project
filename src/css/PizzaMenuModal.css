@@ -6,9 +6,10 @@
 }
 #DeliveryInformationModal
 {
-    height: 64%;
-    margin-left:25%;
+    height: 38%;
+    margin-left:2.5%;
     margin-top:5%;
+    width: 95% ;
 }
 
 #exitButtonModal{

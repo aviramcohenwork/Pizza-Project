@@ -61,7 +61,7 @@ class PizzaOrdersComponent extends React.Component
 
      checkName = (item) =>
      {
-        if(item.deliveryDetails.fullname != null){
+        if(item.deliveryDetails&&item.deliveryDetails.fullname != null){
             let fullname = (item.deliveryDetails.fullname).toLowerCase()
             return(fullname); 
          }else{

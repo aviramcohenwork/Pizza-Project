@@ -42,5 +42,12 @@ export const DeliveryDepartment = axios.create({
     baseURL: "http://localhost:8083"
 })
 
+/**
+ *@Desc Create a link to the next url address. 
+*/
+export const GetOrderStatus = axios.create({
+    baseURL: "http://localhost:8082"
+})
+
 
 
