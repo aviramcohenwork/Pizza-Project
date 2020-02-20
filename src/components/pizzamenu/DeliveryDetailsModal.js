@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, Modal} from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import {deliveryModalAction,clearCartAction,sentOrderAction,getOrderToDelivery,activateDeliveryModalInformationAuction,setOrderStatusAction} from '../../actions/Actions'
+import {deliveryModalAction,clearCartAction,sentOrderAction,getOrderToDelivery,activateDeliveryModalInformationAuction,setOrderStatusAction,setCompleteOrderAction} from '../../actions/Actions'
 import { Field,reduxForm, reset,Form, } from 'redux-form'
 import { Button } from 'react-bootstrap';
 import DropdownList from 'react-widgets/lib/DropdownList';
@@ -81,6 +81,7 @@ class DeliveryDetailsModal extends React.Component
     {
         setTimeout(function () {
             this.props.changeDeliveryInformationModelStatus(true);
+            this.props.compleateOrder(true);
         }.bind(this),5000);
         
     }
@@ -96,11 +97,11 @@ class DeliveryDetailsModal extends React.Component
         let orders =[order];
         this.props.sentOrder(orders);
         dispatch(reset("DeliveryDetailsModalForm"));
-        this.props.clearCart();
         alert("Order Compleate!");
         this.closeDeliveryDetailsModal();
         this.props.getInfo(this.props.idNumber);
         this.suspending();
+
         
     }
 
@@ -109,7 +110,7 @@ class DeliveryDetailsModal extends React.Component
      */
     setOrderStatus = () =>
     {
-        let orderStatus =" The pizza delivered to shipping department";
+        let orderStatus =" The Pizza Delivered To Shipping Department";
         this.props.setOrderStatus(orderStatus);
     }
 
@@ -217,7 +218,8 @@ export const mapDispatchToProps = (dispatch) => {
         clearCart : () => clearCartAction(dispatch),
         getInfo : (ortderIdNumber) => getOrderToDelivery(dispatch,ortderIdNumber),
         changeDeliveryInformationModelStatus : (deliveryModalInformationStatus) => activateDeliveryModalInformationAuction(dispatch,deliveryModalInformationStatus),
-        setOrderStatus : (orderStatus) => setOrderStatusAction(dispatch,orderStatus)
+        setOrderStatus : (orderStatus) => setOrderStatusAction(dispatch,orderStatus),
+        compleateOrder : (val) =>  setCompleteOrderAction(dispatch,val)
     } 
 };
 

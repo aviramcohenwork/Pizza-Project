@@ -1,4 +1,4 @@
-import {Location,PizzaAndDrinks,SaveOrder,GetOrders,Coupuns,DeliveryDepartment} from '../api/pizza'
+import {Location,PizzaAndDrinks,SaveOrder,GetOrders,Coupuns,DeliveryDepartment,GetOrderStatus} from '../api/pizza'
 import {ActionTypes} from '../const/ActionsTypes'
 
 
@@ -68,6 +68,13 @@ export const getOrderToDelivery = async (dispatch,orderIdNumber)=> {
 
 };
 
+export const getOrderStatusAction = async (dispatch,orderIdNumber)=> {
+    debugger;
+    const response = await GetOrderStatus.get(`Order/GetOrderStatus/${orderIdNumber}`);
+    debugger;
+    dispatch({ type: ActionTypes.GET_ORDER_STATUS_FROM_MS, payload: response.data });
+};
+
 //=====================================================================================
 
 
@@ -111,6 +118,26 @@ export const setTotalPriceAction = (dispatch,totalprice) =>
 export const setOrderStatusAction = (dispatch,orderStatus) =>
 {
     dispatch({type:ActionTypes.SET_ORDER_STATUS, payload: orderStatus});
+}
+
+export const setCompleteOrderAction= (dispatch,val)=>
+{
+    dispatch({type:ActionTypes.SET_COMPLETE_ORDER, payload: val});
+}
+
+export const changeStatusForFirstAction= (dispatch,val)=>
+{
+    dispatch({type:ActionTypes.CHANGE_STATUS_FOR_FIRST, payload: val});
+}
+
+export const changeSecondStatusForSecondAction= (dispatch,vall)=>
+{
+    dispatch({type:ActionTypes.CHANGE_STATUS_FOR_SECOND, payload: vall});
+}
+
+export const changeFinishAction= (dispatch,valll)=>
+{
+    dispatch({type:ActionTypes.CHANGE_TO_FINISH, payload: valll});
 }
 
 export const removeDrinkFromCartAction = (dispatch,item) =>
